@@ -1,6 +1,6 @@
 # Pointual
 
-Employee management app for a time and attendance policy
+An employee management app for a time and attendance policy.
 
 - [Overview](#overview)
   - [Features](#features)
@@ -24,31 +24,30 @@ Employee management app for a time and attendance policy
 
 ### Features
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- _An admin can be created and has a login_
+- _Create employees with name, hire date, point value of 0, and infractions_
+- _Full CRUD on employees table_
+- _Full CRUD on infractions table_
+- _Running total of points from the total amount of infractions_
+- _See an index of infractions from a specific date or by employee_
+- _Point values have zones to alert the admin when an employee wiil receive a verbal, written, and final warning or a termination._
 
 <br>
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- _Provide a quick and easy way to submit infractions_
+- _Provide accountability by reviewing total infractions from specific date_
+- _Quick acknowledgement to see which employees need to be reconsicled_
 
 <br>
 
 ### Challenges
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- _Ensure that each infraction entry affects the state of the employee's point value_
+- _The point zone alert reflect from employee's point value_
+- _Date method is always tricky when implementing_
+- _Understanding ERD_
 
 <br>
 
