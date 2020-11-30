@@ -146,6 +146,7 @@ src
 |       CORS       | _Node.js CORS middleware_                                                                                                                             |
 |      bcrypt      | _bcrypt is a password-hashing function_                                                                                                               |
 |       jwt        | _JSON web-token_                                                                                                                                      |
+| Bootstrap Modal  | _overlay plugin_                                                                                                                                      |
 
 <br>
 
