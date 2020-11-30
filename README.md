@@ -26,8 +26,8 @@ An employee management app for a time and attendance policy.
 
 - _An admin can be created and has a login_
 - _Create employees with name, hire date, point value of 0, and infractions_
-- _Full CRUD on employees table_
 - _Full CRUD on infractions table_
+- _Full CRUD on documentations table_
 - _Running total of points from the total amount of infractions_
 - _See an index of infractions from a specific date or by employee_
 - _Point values have zones to alert the admin when an employee wiil receive a verbal, written, and final warning or a termination._
@@ -55,109 +55,111 @@ An employee management app for a time and attendance policy.
 
 ### Client (Front End)
 
-#### Wireframes
+#### [Wireframes](https://www.figma.com/file/VK6RBT5ETYWBEjW21Ci1S0/Pointual.?node-id=0%3A1)
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
-
-![Dummy Link](url)
-
-- Desktop Landing
-
-![Dummy Link](url)
-
-- Desktop Hero
-
-![Dummy Link](url)
-
-- Resource Index
-
-![Dummy Link](url)
-
-- Resource Show
-
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
-
-#### Component Tree
-
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components.
+#### [Component tree](https://whimsical.com/8QHpX8t88mHfGeKKt6wbsD)
 
 #### Component Hierarchy
-
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like.
 
 ```structure
 
 src
 |__ assets/
       |__ fonts
-      |__ graphics
+      |__ icons
       |__ images
-      |__ mockups
 |__ components/
       |__ Header.jsx
+      |__ Overlay.jsx
+|__ containers/
+      |__ MainContainer.jsx
+|__ layouts/
+      |__ Layout.jsx
+      |__ EmployeeDetail.jsx
+|__ screens/
+      |__ Login.jsx
+      |__ Employees.jsx
+      |__ Infractions.jsx
+      |__ Documentations.jsx
+
 |__ services/
+      |__ infractions.js
+      |__ documentations.js
 
 ```
 
-#### Component Tree
-
-> Use this section to include a link to your component tree.
-
-[Component tree](url)
-
 #### Time Estimates
 
-> Use this section to estimate the time necessary to build out each of the components you've described above.
+| Backend                    | Priority | Estimated Time | Time Invested | Actual Time |
+| -------------------------- | :------: | :------------: | :-----------: | :---------: |
+| File structure setup       |    H     |     1 hrs      |               |     TBD     |
+| Rails setup                |    H     |    20 mins     |               |     TBD     |
+| Users/Authentication       |    H     |     3 hrs      |               |     TBD     |
+| Scaffold infractions       |    H     |    10 mins     |               |     TBD     |
+| Scaffold documentations    |    H     |    10 mins     |               |     TBD     |
+| Model associations         |    H     |     1 hrs      |               |     TBD     |
+| Verify Schema / Migrations |    H     |     1 hrs      |               |     TBD     |
+| Seed file                  |    H     |     1 hrs      |               |     TBD     |
+| Controllers                |    H     |     3 hrs      |               |     TBD     |
+| Routes                     |    H     |    10 mins     |               |     TBD     |
+| Testing backend            |    H     |     2 hrs      |               |     TBD     |
+| File structure setup       |    H     |     1 hrs      |               |     TBD     |
+| TOTAL                      |          |    13.8 hrs    |               |     TBD     |
 
-| Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
-
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
+| Frontend             |       Priority        | Estimated Time | Time Invested | Actual Time |
+| -------------------- | :-------------------: | :------------: | :-----------: | :---------: | --- |
+| File structure setup |           H           |     1 hrs      |               |     TBD     |
+| Gather assets        |           H           |     1 hrs      |               |     TBD     |
+| Services             |           H           |     6 hrs      |               |     TBD     |
+| Design               |           H           |     15 hrs     |               |     TBD     |
+| -                    |     Layout/Header     |       H        |     1 hrs     |             | TBD |
+| -                    | Layout/EmployeeDetail |       H        |     4 hrs     |             | TBD |
+| -                    |       Employees       |       H        |     1 hrs     |             | TBD |
+| -                    |      Infractions      |       H        |     3 hrs     |             | TBD |
+| -                    |    Documentations     |       H        |     1 hrs     |             | TBD |
+| -                    |         Other         |       H        |     5 hrs     |             | TBD |
+| -                    |        Mobile         |       H        |    10 hrs     |             | TBD |
+| Components           |           H           |     3 hrs      |               |     TBD     |
+| Debugging            |           H           |     3 hrs      |               |     TBD     |
+| TOTAL                |                       |     29 hrs     |               |     TBD     |
 
 <br>
 
 ### Server (Back End)
 
-#### ERD Model
-
-> Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
+#### [ERD Model](https://drive.google.com/file/d/1CpZfCh-gnbMOBZC7Ndsy-6-HOgV2Gdww/view?usp=sharing)
 
 <br>
 
 ### Libraries and Dependencies
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
-
-|     Library      | Description                                |
-| :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|     Library      | Description                                                                                                                                           |
+| :--------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
+|      React       | _React is a JavaScript library for creating user interfaces._                                                                                         |
+| React Router Dom | _DOM bindings for React Router_                                                                                                                       |
+|      Axios       | _Promise based HTTP client for the browser and node.js_                                                                                               |
+|      Rails       | _A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC)_ |
+|       CORS       | _Node.js CORS middleware_                                                                                                                             |
+|      bcrypt      | _bcrypt is a password-hashing function_                                                                                                               |
+|       jwt        | _JSON web-token_                                                                                                                                      |
 
 <br>
 ***
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+- Build out screens for Zones, Status, Logs
+- CRUD for employees
+- Signup as a company
+- Login as a company then login as a user
+- Create a clients/company table
 
 ---
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
+TBD
 
 ## Code Issues & Resolutions
 
-> Use this section to list of all major issues encountered and their resolution.
+TBD
