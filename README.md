@@ -35,7 +35,7 @@ An employee management app for a time and attendance policy. Effectively, admins
 
 ### Goals
 
-- _Provide a quick and easy way to submit infractions_
+- _Provide a quick and easy way to submit infractions and documentations_
 - _Provide accountability by reviewing total infractions from specific date_
 - _Quick acknowledgement to see which employees need to be reconsicled_
 
