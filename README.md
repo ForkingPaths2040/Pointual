@@ -11,7 +11,6 @@ An employee management app for a time and attendance policy.
     - [Wireframes](#wireframes)
     - [Component Tree](#component-tree)
     - [Component Hierarchy](#component-hierarchy)
-    - [Component Breakdown](#component-breakdown)
     - [Time Estimates](#time-estimates)
   - [Server (Back End)](#server-back-end)
     - [ERD Model](#erd-model)
@@ -126,6 +125,8 @@ src
 <br>
 
 ### Server (Back End)
+
+<br>
 
 #### [ERD Model](https://drive.google.com/file/d/1CpZfCh-gnbMOBZC7Ndsy-6-HOgV2Gdww/view?usp=sharing)
 
