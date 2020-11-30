@@ -107,22 +107,22 @@ src
 
 <br>
 
-| Frontend             |       Priority        | Estimated Time | Time Invested | Actual Time |
-| -------------------- | :-------------------: | :------------: | :-----------: | :---------: | --- |
-| File structure setup |           H           |     1 hrs      |               |     TBD     |
-| Gather assets        |           H           |     1 hrs      |               |     TBD     |
-| Services             |           H           |     6 hrs      |               |     TBD     |
-| Design               |           H           |     15 hrs     |               |     TBD     |
-| -                    |     Layout/Header     |       H        |     1 hrs     |             | TBD |
-| -                    | Layout/EmployeeDetail |       H        |     4 hrs     |             | TBD |
-| -                    |       Employees       |       H        |     1 hrs     |             | TBD |
-| -                    |      Infractions      |       H        |     3 hrs     |             | TBD |
-| -                    |    Documentations     |       H        |     1 hrs     |             | TBD |
-| -                    |         Other         |       H        |     5 hrs     |             | TBD |
-| -                    |        Mobile         |       H        |    10 hrs     |             | TBD |
-| Components           |           H           |     3 hrs      |               |     TBD     |
-| Debugging            |           H           |     3 hrs      |               |     TBD     |
-| TOTAL                |                       |     29 hrs     |               |     TBD     |
+| Frontend              | Priority | Estimated Time | Time Invested | Actual Time |
+| --------------------- | :------: | :------------: | :-----------: | :---------: |
+| File structure setup  |    H     |     1 hrs      |               |     TBD     |
+| Gather assets         |    H     |     1 hrs      |               |     TBD     |
+| Services              |    H     |     6 hrs      |               |     TBD     |
+| Design                |    H     |     15 hrs     |               |     TBD     |
+| Layout/Header         |    H     |     1 hrs      |               |     TBD     |
+| Layout/EmployeeDetail |    H     |     4 hrs      |               |     TBD     |
+| Employees             |    H     |     1 hrs      |               |     TBD     |
+| Infractions           |    H     |     3 hrs      |               |     TBD     |
+| Documentations        |    H     |     1 hrs      |               |     TBD     |
+| Other                 |    H     |     5 hrs      |               |     TBD     |
+| Mobile                |    H     |     10 hrs     |               |     TBD     |
+| Components            |    H     |     3 hrs      |               |     TBD     |
+| Debugging             |    H     |     3 hrs      |               |     TBD     |
+| TOTAL                 |          |     29 hrs     |               |     TBD     |
 
 <br>
 
