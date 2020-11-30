@@ -89,37 +89,40 @@ src
 
 #### Time Estimates
 
-| Backend                    |       Priority        | Estimated Time | Time Invested | Actual Time |
-| -------------------------- | :-------------------: | :------------: | :-----------: | :---------: | --- |
-| File structure setup       |           H           |     1 hrs      |               |     TBD     |
-| Rails setup                |           H           |    20 mins     |               |     TBD     |
-| Users/Authentication       |           H           |     3 hrs      |               |     TBD     |
-| Scaffold infractions       |           H           |    10 mins     |               |     TBD     |
-| Scaffold documentations    |           H           |    10 mins     |               |     TBD     |
-| Model associations         |           H           |     1 hrs      |               |     TBD     |
-| Verify Schema / Migrations |           H           |     1 hrs      |               |     TBD     |
-| Seed file                  |           H           |     1 hrs      |               |     TBD     |
-| Controllers                |           H           |     3 hrs      |               |     TBD     |
-| Routes                     |           H           |    10 mins     |               |     TBD     |
-| Testing backend            |           H           |     2 hrs      |               |     TBD     |
-| File structure setup       |           H           |     1 hrs      |               |     TBD     |
-| TOTAL                      |                       |    13.8 hrs    |               |     TBD     |
-| --------------------       | :-------------------: | :------------: | :-----------: | :---------: | --- |
-| Frontend                   |       Priority        | Estimated Time | Time Invested | Actual Time |
-| File structure setup       |           H           |     1 hrs      |               |     TBD     |
-| Gather assets              |           H           |     1 hrs      |               |     TBD     |
-| Services                   |           H           |     6 hrs      |               |     TBD     |
-| Design                     |           H           |     15 hrs     |               |     TBD     |
-| -                          |     Layout/Header     |       H        |     1 hrs     |             | TBD |
-| -                          | Layout/EmployeeDetail |       H        |     4 hrs     |             | TBD |
-| -                          |       Employees       |       H        |     1 hrs     |             | TBD |
-| -                          |      Infractions      |       H        |     3 hrs     |             | TBD |
-| -                          |    Documentations     |       H        |     1 hrs     |             | TBD |
-| -                          |         Other         |       H        |     5 hrs     |             | TBD |
-| -                          |        Mobile         |       H        |    10 hrs     |             | TBD |
-| Components                 |           H           |     3 hrs      |               |     TBD     |
-| Debugging                  |           H           |     3 hrs      |               |     TBD     |
-| TOTAL                      |                       |     29 hrs     |               |     TBD     |
+| Backend                    | Priority | Estimated Time | Time Invested | Actual Time |
+| -------------------------- | :------: | :------------: | :-----------: | :---------: |
+| File structure setup       |    H     |     1 hrs      |               |     TBD     |
+| Rails setup                |    H     |    20 mins     |               |     TBD     |
+| Users/Authentication       |    H     |     3 hrs      |               |     TBD     |
+| Scaffold infractions       |    H     |    10 mins     |               |     TBD     |
+| Scaffold documentations    |    H     |    10 mins     |               |     TBD     |
+| Model associations         |    H     |     1 hrs      |               |     TBD     |
+| Verify Schema / Migrations |    H     |     1 hrs      |               |     TBD     |
+| Seed file                  |    H     |     1 hrs      |               |     TBD     |
+| Controllers                |    H     |     3 hrs      |               |     TBD     |
+| Routes                     |    H     |    10 mins     |               |     TBD     |
+| Testing backend            |    H     |     2 hrs      |               |     TBD     |
+| File structure setup       |    H     |     1 hrs      |               |     TBD     |
+| TOTAL                      |          |    13.8 hrs    |               |     TBD     |
+
+<br>
+
+| Frontend             |       Priority        | Estimated Time | Time Invested | Actual Time |
+| -------------------- | :-------------------: | :------------: | :-----------: | :---------: | --- |
+| File structure setup |           H           |     1 hrs      |               |     TBD     |
+| Gather assets        |           H           |     1 hrs      |               |     TBD     |
+| Services             |           H           |     6 hrs      |               |     TBD     |
+| Design               |           H           |     15 hrs     |               |     TBD     |
+| -                    |     Layout/Header     |       H        |     1 hrs     |             | TBD |
+| -                    | Layout/EmployeeDetail |       H        |     4 hrs     |             | TBD |
+| -                    |       Employees       |       H        |     1 hrs     |             | TBD |
+| -                    |      Infractions      |       H        |     3 hrs     |             | TBD |
+| -                    |    Documentations     |       H        |     1 hrs     |             | TBD |
+| -                    |         Other         |       H        |     5 hrs     |             | TBD |
+| -                    |        Mobile         |       H        |    10 hrs     |             | TBD |
+| Components           |           H           |     3 hrs      |               |     TBD     |
+| Debugging            |           H           |     3 hrs      |               |     TBD     |
+| TOTAL                |                       |     29 hrs     |               |     TBD     |
 
 <br>
 
