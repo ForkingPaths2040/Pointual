@@ -1,6 +1,6 @@
 # Pointual
 
-An employee management app for a time and attendance policy.
+An employee management app for a time and attendance policy. Effectively, admins and employees are presumably already available. An admin is able to track employees through their tardies and absences along with when they were documented after reaching certain levels of accumulation.
 
 - [Overview](#overview)
   - [Features](#features)
