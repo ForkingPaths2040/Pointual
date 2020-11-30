@@ -141,7 +141,7 @@ src
 |      React       | _React is a JavaScript library for creating user interfaces._                                                                                         |
 | React Router Dom | _DOM bindings for React Router_                                                                                                                       |
 |      Axios       | _Promise based HTTP client for the browser and node.js_                                                                                               |
-|  ag-grid-react   | _PLugin_                                                                                                                                              |
+|  ag-grid-react   | _Plugin_                                                                                                                                              |
 |      Rails       | _A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC)_ |
 |       CORS       | _Node.js CORS middleware_                                                                                                                             |
 |      bcrypt      | _bcrypt is a password-hashing function_                                                                                                               |
