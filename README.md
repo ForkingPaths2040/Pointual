@@ -1,6 +1,6 @@
 # Pointual
 
-An employee management app for a time and attendance policy.
+An employee management app for a time and attendance policy. Effectively, admins and employees are presumably already available. An admin is able to track employees through their tardies and absences along with when they were documented after reaching certain levels of accumulation.
 
 - [Overview](#overview)
   - [Features](#features)
@@ -35,7 +35,7 @@ An employee management app for a time and attendance policy.
 
 ### Goals
 
-- _Provide a quick and easy way to submit infractions_
+- _Provide a quick and easy way to submit infractions and documentations_
 - _Provide accountability by reviewing total infractions from specific date_
 - _Quick acknowledgement to see which employees need to be reconsicled_
 
@@ -141,7 +141,7 @@ src
 |      React       | _React is a JavaScript library for creating user interfaces._                                                                                         |
 | React Router Dom | _DOM bindings for React Router_                                                                                                                       |
 |      Axios       | _Promise based HTTP client for the browser and node.js_                                                                                               |
-|  ag-grid-react   | _PLugin_                                                                                                                                              |
+|  ag-grid-react   | _Plugin_                                                                                                                                              |
 |      Rails       | _A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC)_ |
 |       CORS       | _Node.js CORS middleware_                                                                                                                             |
 |      bcrypt      | _bcrypt is a password-hashing function_                                                                                                               |
