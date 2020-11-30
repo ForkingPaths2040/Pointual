@@ -24,8 +24,8 @@ An employee management app for a time and attendance policy.
 
 ### Features
 
-- _An admin can be created and has a login_
-- _Create employees with name, hire date, point value of 0, and infractions_
+- _An admin exists and can login_
+- _Acess index of employees_
 - _Full CRUD on infractions table_
 - _Full CRUD on documentations table_
 - _Running total of points from the total amount of infractions_
@@ -138,17 +138,19 @@ src
 |      React       | _React is a JavaScript library for creating user interfaces._                                                                                         |
 | React Router Dom | _DOM bindings for React Router_                                                                                                                       |
 |      Axios       | _Promise based HTTP client for the browser and node.js_                                                                                               |
+|  ag-grid-react   | _PLugin_                                                                                                                                              |
 |      Rails       | _A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC)_ |
 |       CORS       | _Node.js CORS middleware_                                                                                                                             |
 |      bcrypt      | _bcrypt is a password-hashing function_                                                                                                               |
 |       jwt        | _JSON web-token_                                                                                                                                      |
 
 <br>
-***
 
 ## Post-MVP
 
 - Build out screens for Zones, Status, Logs
+- Search employees
+- Filter by date
 - CRUD for employees
 - Signup as a company
 - Login as a company then login as a user
