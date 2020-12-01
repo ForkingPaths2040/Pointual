@@ -1,4 +1,5 @@
 class EmployeesController < ApplicationController
+  before_action :authorize_request
   before_action :set_employee, only: [:show, :update, :destroy]
 
   # GET /employees
