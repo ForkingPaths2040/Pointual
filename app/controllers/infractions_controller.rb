@@ -5,23 +5,24 @@ class InfractionsController < ApplicationController
   def index
     @employee =Employee.find(params[:employee_id])
     @infractions = @employee.infractions
-    
-
+  
     render json: @infractions
   end
 
   # GET /infractions/1
   def show
-    
+    # @employee =Employee.find(params[:employee_id])
+    # @infraction = @employee.infractions.find(params[:id])
     render json: @infraction
   end
 
   # POST /infractions
   def create
-    @infraction = Infraction.new(infraction_params)
+    @employee =Employee.find(params[:employee_id])
+    @infraction = @employee.infractions.new(infraction_params)
 
     if @infraction.save
-      render json: @infraction, status: :created, location: @infraction
+      render json: @infraction, status: :created
     else
       render json: @infraction.errors, status: :unprocessable_entity
     end
@@ -29,6 +30,8 @@ class InfractionsController < ApplicationController
 
   # PATCH/PUT /infractions/1
   def update
+    # @employee =Employee.find(params[:employee_id])
+    # @infraction = @employee.infractions.find(params[:id])
     if @infraction.update(infraction_params)
       render json: @infraction
     else
@@ -38,13 +41,16 @@ class InfractionsController < ApplicationController
 
   # DELETE /infractions/1
   def destroy
+    # @employee =Employee.find(params[:employee_id])
+    # @infraction = @employee.infractions.find(params[:id]).destroy
     @infraction.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_infraction
-      @infraction = Infraction.find(params[:id])
+      @employee =Employee.find(params[:employee_id])
+      @infraction = @employee.infractions.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
