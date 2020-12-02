@@ -31,7 +31,7 @@ function Employees(props) {
   return (
     <>
       <Navigation handleLogout={props.handleLogout} />
-      <div>{employeesJSX}</div>
+      <div className='employees'>{employeesJSX}</div>
     </>
   );
 }

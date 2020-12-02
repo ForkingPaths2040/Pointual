@@ -1,0 +1,28 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  transition: 250ms all;
+}
+.card:hover {
+  transform: scale(1.02);
+  /* opacity: .9; */
+}
+
+.employee-card-mask {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.employee-card-image {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  height: 150%;
+  width: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
