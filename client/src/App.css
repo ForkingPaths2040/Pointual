@@ -1,6 +1,36 @@
 .App {
   text-align: center;
 }
-.logo {
+
+/* Global Font Classes */
+.extra-bold {
   font-family: "Abhaya Libre", serif;
+  display: flex;
+  font-weight: 800;
+  font-size: 48px;
+}
+.medium-font {
+  font-family: "Abhaya Libre", serif;
+  font-weight: 500;
+  font-size: 48px;
+  letter-spacing: -1px;
+}
+
+/* Global Button Classes */
+.button-1 {
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #1c8bf9;
+  border: 0;
+  width: 23%;
+  height: 13%;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin: 30px auto;
+}
+.button-1:hover {
+  background-color: #fff;
+  color: #1c8bf9;
+  border: solid 1px #1c8bf9;
 }

@@ -1,11 +1,10 @@
 import './App.css';
-import hero from './assets/images/candidates.png'
+import Login from './screens/Login/Login'
 
 function App() {
   return (
     <div className="App">
-      <h1 className="logo">Pointual.</h1>
-      <img src={hero} alt="hero-image"/>
+      <Login />
     </div>
   );
 }

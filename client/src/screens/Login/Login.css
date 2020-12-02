@@ -1,0 +1,33 @@
+.login-hero-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+/* .hero-container {
+  display: flex;
+  flex-direction: column;
+} */
+
+.hero-image {
+  width: 45%;
+  height: auto;
+  position: absolute;
+  top: 15%;
+  left: 53%;
+}
+
+.hero-p {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 78%;
+  left: 49%;
+}
+#time-attendance {
+  margin: 0px;
+}
+#made-easy {
+  margin: 0px;
+}
