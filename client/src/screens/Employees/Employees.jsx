@@ -22,7 +22,7 @@ function Employees(props) {
       _id={employee.employee_id}
       firstName={employee.first_name}
       lastName={employee.last_name}
-      imgURL= 'null'
+      imgURL= {employee.img_URL}
       position={employee.position}
       points={employee.points}
       key={index}
