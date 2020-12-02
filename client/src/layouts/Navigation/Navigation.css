@@ -1,0 +1,26 @@
+#logo2 {
+  padding-left: 2%;
+  justify-self: start;
+}
+
+.nav-container {
+  border-bottom: solid 1px black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-items > a {
+  text-decoration: none;
+  color: #1c8bf9;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  padding-inline-start: 0px;
+}

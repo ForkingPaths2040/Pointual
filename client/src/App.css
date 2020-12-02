@@ -34,3 +34,21 @@
   color: #1c8bf9;
   border: solid 1px #1c8bf9;
 }
+
+.button-2 {
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #1c8bf9;
+  border: 0;
+  width: 129px;
+  height: 40px;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin: 0px;
+}
+.button-2:hover {
+  background-color: #fff;
+  color: #1c8bf9;
+  border: solid 1px #1c8bf9;
+}
