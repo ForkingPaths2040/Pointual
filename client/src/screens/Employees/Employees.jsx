@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {Redirect} from 'react-router-dom'
 import Navigation from '../../layouts/Navigation/Navigation';
 import EmployeeCards from '../../components/EmployeeCards/EmployeeCards'
 import {getEmployees} from '../../services/employees'
@@ -19,6 +20,7 @@ function Employees(props) {
   console.log(employees)
   const employeesJSX = employees.map((employee, index) => (
     <EmployeeCards
+      currentUser = {props.currentUser}
       _id={employee.employee_id}
       firstName={employee.first_name}
       lastName={employee.last_name}
@@ -31,7 +33,14 @@ function Employees(props) {
   return (
     <>
       <Navigation handleLogout={props.handleLogout} />
-      <div className='employees'>{employeesJSX}</div>
+      {
+        props.currentUser ?
+          <>
+            <div className='employees'>{employeesJSX}</div>
+          </>
+          :
+          <Redirect to='/login'/>
+      }
     </>
   );
 }

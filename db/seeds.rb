@@ -11,7 +11,7 @@ Infraction.destroy_all
 
 require 'faker'
 
-5.times do 
+10.times do 
   @first_name = Faker::Name.unique.first_name
   @employee = Employee.create!(
     first_name: @first_name,

@@ -39,12 +39,13 @@ function App() {
     <Switch>
         <Route path='/login'>
           <Login
-            currentUser={currentUser}
             handleLogin={handleLogin}
           />
         </Route>
         <Route path='/employees'>
-        <Employees handleLogout={handleLogout}/>
+        <Employees
+          currentUser={currentUser}
+          handleLogout={handleLogout} />
         </Route>
       </Switch>
   );

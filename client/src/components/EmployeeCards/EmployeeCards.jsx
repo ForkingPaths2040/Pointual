@@ -13,7 +13,7 @@ function EmployeeCards(props) {
         </div>
         <div className='employee-content-name'>{props.firstName} {props.lastName}</div>
         <div className='employee-content-position'>{props.position}</div>
-        <div className='employee-content-points'>{props.points}</div>
+        <div className='employee-content-points'>{props.points} points</div>
     </Link>
   </div>
   );
