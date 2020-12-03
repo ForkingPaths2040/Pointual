@@ -52,3 +52,9 @@
   color: #1c8bf9;
   border: solid 1px #1c8bf9;
 }
+
+/* Global <hr/> */
+.line-break-1 {
+  border: solid 1px lightgrey;
+  width: 90%;
+}

@@ -2,22 +2,27 @@
   display: flex;
   flex-direction: column;
   width: 25%;
+  border-right: solid 1px lightgrey;
 }
 
 .employee-image-container {
   display: flex;
   flex-direction: column;
+  margin: 0 17%;
 }
 
+.detail-name {
+  text-align: center;
+}
 .detail-points {
   text-align: end;
 }
 
 .detail-mask {
   position: relative;
-  margin: 0 auto;
-  width: 100px;
-  height: 100px;
+  margin: 0 auto 15px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -26,8 +31,8 @@
   position: absolute;
   margin: 0 auto;
   left: 50%;
-  top: 60%;
-  height: 150%;
+  top: 70%;
+  height: 175%;
   width: auto;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
