@@ -11,13 +11,15 @@ import Navigation from './layouts/Navigation/Navigation';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  
   const history = useHistory();
 
   useEffect(() => {
     const handleVerify = async () => {
       const userData = await verifyUser();
       setCurrentUser(userData);
-      history.push('/employees')
+      userData ? history.push('/employees')
+      : history.push('/login')
       
     }
     handleVerify();
@@ -37,27 +39,33 @@ function App() {
     history.push('/login');
   }
 
+
   return (
     <Navigation
       currentUser={currentUser}
       handleLogout={handleLogout}>
-    <Switch>
+      <Switch>
+        
         <Route path='/login'>
         <Login
             handleLogin={handleLogin}
+          />
+        </Route>
+
+        <Route path='/employees/:id'>
+        <Employee
+            currentUser={currentUser}
           />
         </Route>
         <Route path='/employees'>
         <Employees
           currentUser={currentUser}
           />
-      </Route>
-      <Route path='/employees/:id'>
-        <Employee
-            currentUser={currentUser}
-          />
-      </Route>
+        </Route>
+
+
       </Switch>
+
       </Navigation>
   );
 }

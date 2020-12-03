@@ -26,7 +26,7 @@
   /* opacity: .9; */
 }
 
-.employee-content-mask {
+.card-content-mask {
   position: relative;
   margin: 0 auto;
   width: 100px;
@@ -35,7 +35,7 @@
   overflow: hidden;
 }
 
-.employee-content-image {
+.card-content-image {
   position: absolute;
   margin: 0 auto;
   left: 50%;
@@ -47,8 +47,8 @@
   transform: translate(-50%, -50%);
 }
 
-.employee-content-name,
-.employee-content-position,
-.employee-content-points {
+.card-content-name,
+.card-content-position,
+.card-content-points {
   text-align: center;
 }

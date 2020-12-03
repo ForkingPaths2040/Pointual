@@ -8,3 +8,12 @@ export const getEmployees = async () => {
       throw error
   }
 }
+
+export const getEmployee = async (id) => {
+  try {
+    const response = await api.get(`/employees/${id}`);
+      return response.data
+  } catch (error) {
+      throw error
+  }
+}
