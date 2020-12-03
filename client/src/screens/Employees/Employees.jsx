@@ -31,7 +31,6 @@ function Employees(props) {
   ));
   return (
     <>
-      <Navigation handleLogout={props.handleLogout} />
       {
         props.currentUser ?
           <div className='employees'>{employeesJSX}</div>

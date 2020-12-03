@@ -7,6 +7,7 @@ import { loginUser, removeToken, verifyUser } from './services/auth';
 import Login from './screens/Login/Login'
 import Employees from './screens/Employees/Employees';
 import Employee from './screens/Employee/Employee';
+import Navigation from './layouts/Navigation/Navigation';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -16,9 +17,8 @@ function App() {
     const handleVerify = async () => {
       const userData = await verifyUser();
       setCurrentUser(userData);
-      if (!userData) {
-        history.push('/login')
-      }
+      history.push('/employees')
+      
     }
     handleVerify();
   }, [])
@@ -37,23 +37,26 @@ function App() {
   }
 
   return (
+    <Navigation
+      handleLogout={handleLogout}>
     <Switch>
         <Route path='/login'>
-          <Login
+        <Login
             handleLogin={handleLogin}
           />
         </Route>
         <Route path='/employees'>
         <Employees
           currentUser={currentUser}
-          handleLogout={handleLogout} />
+          />
       </Route>
       <Route path='/employees/:id'>
         <Employee
-        currentUser={currentUser}
-        handleLogout={handleLogout}/>
+            currentUser={currentUser}
+          />
       </Route>
       </Switch>
+      </Navigation>
   );
 }
 
