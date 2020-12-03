@@ -17,11 +17,10 @@ function Employees(props) {
     }
    fetchEmployees()
   }, [])
-  console.log(employees)
   const employeesJSX = employees.map((employee, index) => (
     <EmployeeCards
       currentUser = {props.currentUser}
-      _id={employee.employee_id}
+      _id={employee.id}
       firstName={employee.first_name}
       lastName={employee.last_name}
       imgURL= {employee.img_URL}
@@ -35,11 +34,10 @@ function Employees(props) {
       <Navigation handleLogout={props.handleLogout} />
       {
         props.currentUser ?
-          <>
-            <div className='employees'>{employeesJSX}</div>
-          </>
+          <div className='employees'>{employeesJSX}</div>
           :
-          <Redirect to='/login'/>
+          <Redirect to='/login' />
+          
       }
     </>
   );
