@@ -29,7 +29,7 @@ function EmployeeDetail(props) {
           <p>{employee.phone_number}</p>
           <p>{employee.position}</p>
           <p>{employee.hire_date}</p>
-          <p>{employee.tenure}</p>
+          <p>{employee.tenure} days</p>
         </div>
       </div>
     </div>

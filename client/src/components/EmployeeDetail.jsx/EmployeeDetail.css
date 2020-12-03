@@ -42,14 +42,17 @@
 .employee-stats-container {
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 .employee-data-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 .data-details {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 75%;
+  font-size: 12px;
 }
