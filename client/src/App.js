@@ -26,7 +26,8 @@ function App() {
   const handleLogin = async (loginData) => {
     const userData = await loginUser(loginData);
     setCurrentUser(userData);
-    history.push('/employees');
+    userData ? history.push('/employees')
+      : history.push('/login')
   }
 
   const handleLogout = () => {
