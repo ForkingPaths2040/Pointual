@@ -3,11 +3,12 @@ import { useParams } from 'react-router-dom'
 import './Employee.css'
 import {getEmployee} from '../../services/employees'
 import EmployeeDetail from '../../components/EmployeeDetail.jsx/EmployeeDetail';
-import MaterialTable from '../../components/MaterialTable/MaterialTable';
+import InfractionsTable from '../../components/InfractionsTable/InfractionsTable'
 
 function Employee(props) {
   // maybe try useEffect in the EmployeeCards?
   const [employee, setEmployee] = useState({});
+  const [dataRow, setDataRow] = useState({});
 
   const { id } = useParams();
 
@@ -19,11 +20,12 @@ function Employee(props) {
     }
     fetchEmployee();
   }, [id])
+
   return (
     <div className='employee-container'>
       <EmployeeDetail employee={employee} />
       <div className='grid-container'>
-        <MaterialTable />
+        <InfractionsTable employee={employee}/>
       </div>
     </div>
   );
