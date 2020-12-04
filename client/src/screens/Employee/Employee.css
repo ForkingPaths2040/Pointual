@@ -15,7 +15,14 @@
 
 .table-page-header {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.infraction-title {
+  width: 100%;
+  text-align: left;
+  margin: 0 0 14px;
 }
