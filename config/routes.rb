@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  resources :employees do
-    resources :infractions
+  resources :employees, only: [:index, :show] do
+    resources :infractions, only: [:create, :update, :destroy]
   end
-
   
   # resources :employees
   # resources :infractions
