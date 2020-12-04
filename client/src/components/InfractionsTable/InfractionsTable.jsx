@@ -33,23 +33,23 @@ function InfractionsTable(props) {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Entry ID</TableCell>
-            <TableCell align="right">Attendance</TableCell>
-            <TableCell align="right">Date</TableCell>
-            <TableCell align="right">Points</TableCell>
-            <TableCell align="right">Reason</TableCell>
+            <TableCell align="center">Entry ID</TableCell>
+            <TableCell align="center">Attendance</TableCell>
+            <TableCell align="center">Date</TableCell>
+            <TableCell align="center">Points</TableCell>
+            <TableCell align="center">Reason</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {employee?.infractions?.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell component="th" scope="row">
+            <TableRow key={row.id} >
+              <TableCell component="th" scope="row" align="center">
                 {row.id}
               </TableCell>
-              <TableCell align="right">{row.attendance}</TableCell>
-              <TableCell align="right">{row.date}</TableCell>
-              <TableCell align="right">{row.points}</TableCell>
-              <TableCell align="right">{row.reason}</TableCell>
+              <TableCell align="center">{row.attendance}</TableCell>
+              <TableCell align="center">{row.date}</TableCell>
+              <TableCell align="center">{row.points}</TableCell>
+              <TableCell align="center">{row.reason}</TableCell>
               {/* <TableCell align="right">{row.protein}</TableCell> */}
             </TableRow>
           ))}

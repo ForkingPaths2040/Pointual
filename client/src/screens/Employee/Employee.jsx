@@ -25,6 +25,9 @@ function Employee(props) {
     <div className='employee-container'>
       <EmployeeDetail employee={employee} />
       <div className='grid-container'>
+        <div className="table-page-header">
+          <h2>Infractions</h2>
+        </div>
         <InfractionsTable employee={employee}/>
       </div>
     </div>
