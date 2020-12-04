@@ -11,7 +11,7 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1
   def show
-    render json: @employee
+    render json: @employee, include: [:infractions]
   end
 
   # POST /employees

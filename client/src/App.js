@@ -6,18 +6,21 @@ import { loginUser, removeToken, verifyUser } from './services/auth';
 
 import Login from './screens/Login/Login'
 import Employees from './screens/Employees/Employees';
+import Employee from './screens/Employee/Employee';
+import Navigation from './layouts/Navigation/Navigation';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  
   const history = useHistory();
 
   useEffect(() => {
     const handleVerify = async () => {
       const userData = await verifyUser();
       setCurrentUser(userData);
-      if (!userData) {
-        history.push('/login')
-      }
+      userData ? history.push('/employees')
+      : history.push('/login')
+      
     }
     handleVerify();
   }, [])
@@ -25,7 +28,8 @@ function App() {
   const handleLogin = async (loginData) => {
     const userData = await loginUser(loginData);
     setCurrentUser(userData);
-    history.push('/employees');
+    userData ? history.push('/employees')
+      : history.push('/login')
   }
 
   const handleLogout = () => {
@@ -35,19 +39,34 @@ function App() {
     history.push('/login');
   }
 
+
   return (
-    <Switch>
+    <Navigation
+      currentUser={currentUser}
+      handleLogout={handleLogout}>
+      <Switch>
+        
         <Route path='/login'>
-          <Login
+        <Login
             handleLogin={handleLogin}
+          />
+        </Route>
+
+        <Route path='/employees/:id'>
+        <Employee
+            currentUser={currentUser}
           />
         </Route>
         <Route path='/employees'>
         <Employees
           currentUser={currentUser}
-          handleLogout={handleLogout} />
+          />
         </Route>
+
+
       </Switch>
+
+      </Navigation>
   );
 }
 

@@ -5,8 +5,6 @@ import './Login.css'
 import LoginForm from '../../components/LoginForm/LoginForm';
 function Login(props) {
   return (
-    <div>
-      <Header />
       <div className='login-hero-container'>
         <LoginForm
           handleLogin={props.handleLogin}
@@ -17,8 +15,6 @@ function Login(props) {
             <p className='medium-font' id='made-easy'>management made easy.</p>
           </div>
       </div>
-      
-    </div>
   );
 }
 
