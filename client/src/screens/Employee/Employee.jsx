@@ -4,12 +4,14 @@ import './Employee.css'
 import {getEmployee} from '../../services/employees'
 import EmployeeDetail from '../../components/EmployeeDetail.jsx/EmployeeDetail';
 import InfractionsTable from '../../components/InfractionsTable/InfractionsTable'
+import {deleteInfraction} from '../../services/infractions'
 // import AddIcon from '@material-ui/icons/Add';
 
 function Employee(props) {
   // maybe try useEffect in the EmployeeCards?
   const [employee, setEmployee] = useState({});
-  const [dataRow, setDataRow] = useState({});
+  const [isDeleted, setIsDeleted] = useState(false)
+  const [infractions, setInfractions] = useState();
 
   const { id } = useParams();
 
@@ -17,10 +19,17 @@ function Employee(props) {
     const fetchEmployee = async () => {
       const resp = await getEmployee(id);
       setEmployee(resp);
-      
+      setInfractions(employee.infractions)
     }
     fetchEmployee();
-  }, [id])
+  }, [id, isDeleted])
+  
+
+
+  const handleDelete = async (id) => {
+    await deleteInfraction(employee.id, id)
+    setIsDeleted(!isDeleted)
+}
 
   return (
     <div className='employee-container'>
@@ -31,7 +40,7 @@ function Employee(props) {
           <button className="button-4">New Entry</button>
           {/* <AddIcon style={{marginLeft: "10px", color:"#1c8bf9", fontSize: "2em", fontWeight: "2px"}}/> */}
         </div>
-        <InfractionsTable employee={employee}/>
+        <InfractionsTable employee={employee} handleDelete={handleDelete}/>
       </div>
     </div>
   );
