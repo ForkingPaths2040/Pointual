@@ -2,37 +2,96 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Global Font Classes */
+.extra-bold {
+  font-family: "Abhaya Libre", serif;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: 800;
+  font-size: 48px;
+}
+.medium-font {
+  font-family: "Abhaya Libre", serif;
+  font-weight: 500;
+  font-size: 48px;
+  letter-spacing: -1px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Global Button Classes */
+.button-1 {
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #1c8bf9;
+  border: 0;
+  width: 23%;
+  height: 13%;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin: 30px auto;
+}
+.button-1:hover {
+  background-color: #fff;
+  color: #1c8bf9;
+  border: solid 1px #1c8bf9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button-2 {
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #1c8bf9;
+  border: 0;
+  width: 129px;
+  height: 40px;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin: 0px;
+}
+.button-2:hover {
+  background-color: #fff;
+  color: #1c8bf9;
+  border: solid 1px #1c8bf9;
+}
+
+.button-3 {
+  font-size: 13px;
+  color: #ffffff;
+  background-color: #1c8bf9;
+  border: 0;
+  width: 69px;
+  height: 32px;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin: 0px;
+}
+.button-3:hover {
+  background-color: #fff;
+  color: #1c8bf9;
+  border: solid 1px #1c8bf9;
+}
+
+.button-4 {
+  font-size: 13px;
+  color: #ffffff;
+  background-color: #1c8bf9;
+  border: 0;
+  width: 108px;
+  height: 35px;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.button-4:hover {
+  background-color: #fff;
+  color: #1c8bf9;
+  border: solid 1px #1c8bf9;
+}
+
+/* Global <hr/> */
+.line-break-1 {
+  border: solid 1px lightgrey;
+  width: 90%;
 }

@@ -1,24 +1,72 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import { Switch, Route, useHistory } from 'react-router-dom';
+
+import { loginUser, removeToken, verifyUser } from './services/auth';
+
+import Login from './screens/Login/Login'
+import Employees from './screens/Employees/Employees';
+import Employee from './screens/Employee/Employee';
+import Navigation from './layouts/Navigation/Navigation';
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(null);
+  
+  const history = useHistory();
+
+  useEffect(() => {
+    const handleVerify = async () => {
+      const userData = await verifyUser();
+      setCurrentUser(userData);
+      userData ? history.push('/employees')
+      : history.push('/login')
+      
+    }
+    handleVerify();
+  }, [])
+
+  const handleLogin = async (loginData) => {
+    const userData = await loginUser(loginData);
+    setCurrentUser(userData);
+    userData ? history.push('/employees')
+      : history.push('/login')
+  }
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    localStorage.removeItem('authToken');
+    removeToken();
+    history.push('/login');
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Navigation
+      currentUser={currentUser}
+      handleLogout={handleLogout}>
+      <Switch>
+        
+        <Route path='/login'>
+        <Login
+            handleLogin={handleLogin}
+          />
+        </Route>
+
+        <Route path='/employees/:id'>
+        <Employee
+            currentUser={currentUser}
+          />
+        </Route>
+        <Route path='/employees'>
+        <Employees
+          currentUser={currentUser}
+          />
+        </Route>
+
+
+      </Switch>
+
+      </Navigation>
   );
 }
 

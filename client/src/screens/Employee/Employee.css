@@ -1,0 +1,28 @@
+.employee-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5%;
+}
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 75%;
+  margin: 25px;
+}
+
+.table-page-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.infraction-title {
+  width: 100%;
+  text-align: left;
+  margin: 0 0 14px;
+}
