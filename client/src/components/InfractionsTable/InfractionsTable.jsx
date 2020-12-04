@@ -10,6 +10,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import EditIcon from '@material-ui/icons/Edit';
 
+
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -19,14 +20,19 @@ const useStyles = makeStyles({
 
 function InfractionsTable(props) {
   const classes = useStyles();
-  const {employee} = props
-  // const [infractions, setInfractions] = useState({
+  const { employee, handleDelete } = props
+  
+  
+  // const [infraction, setInfraction] = useState({
+  //   id: '',
   //   attendance: '',
   //   date: '',
   //   points: '',
   //   reason: ''
   // })
- console.log(employee.infractions)
+  
+    
+//  console.log(employee.infractions)
 
   return (
     <TableContainer component={Paper}>
@@ -56,7 +62,7 @@ function InfractionsTable(props) {
                 <EditIcon />
               </TableCell>
               <TableCell align="center">
-                <button className='button-3'>Delete</button>
+                <button className='button-3' onClick={() => handleDelete(row.id)}>Delete</button>
               </TableCell>
               {/* <TableCell align="right">{row.protein}</TableCell> */}
             </TableRow>

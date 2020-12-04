@@ -8,3 +8,12 @@ export const getInfractions = async (id) => {
     throw error
   }
 }
+
+export const deleteInfraction = async (id, id2) => {
+  try {
+    const response = await api.delete(`/employees/${id}/infractions/${id2}`)
+      return response.data
+  } catch (error) {
+    throw error
+  }
+}
