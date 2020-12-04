@@ -8,7 +8,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import {getInfractions} from '../../services/infractions'
+import EditIcon from '@material-ui/icons/Edit';
 
 const useStyles = makeStyles({
   table: {
@@ -38,6 +38,8 @@ function InfractionsTable(props) {
             <TableCell align="center">Date</TableCell>
             <TableCell align="center">Points</TableCell>
             <TableCell align="center">Reason</TableCell>
+            <TableCell align="center">Edit</TableCell>
+            <TableCell align="center">Delete</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -50,6 +52,12 @@ function InfractionsTable(props) {
               <TableCell align="center">{row.date}</TableCell>
               <TableCell align="center">{row.points}</TableCell>
               <TableCell align="center">{row.reason}</TableCell>
+              <TableCell align="center">
+                <EditIcon />
+              </TableCell>
+              <TableCell align="center">
+                <button className='button-3'>Delete</button>
+              </TableCell>
               {/* <TableCell align="right">{row.protein}</TableCell> */}
             </TableRow>
           ))}
