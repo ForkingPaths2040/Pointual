@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 
 function InfractionsTable(props) {
   const classes = useStyles();
-  const { employee, handleDelete } = props
+  const { employee, handleDelete, toggleModal } = props
   
   
   // const [infraction, setInfraction] = useState({

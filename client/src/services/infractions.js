@@ -17,3 +17,12 @@ export const deleteInfraction = async (id, id2) => {
     throw error
   }
 }
+
+export const postInfraction = async (id, formData) => {
+  try {
+    const response = await api.post(`/employees/${id}/infractions`, formData)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
