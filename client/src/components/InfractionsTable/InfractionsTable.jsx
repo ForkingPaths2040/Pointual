@@ -9,6 +9,10 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import EditIcon from '@material-ui/icons/Edit';
+import IconButton from "@material-ui/core/IconButton"
+import DoneIcon from "@material-ui/icons/DoneAllTwoTone";
+import Input from "@material-ui/core/Input";
+import { getEmployees } from '../../services/employees';
 
 
 const useStyles = makeStyles({
@@ -19,20 +23,13 @@ const useStyles = makeStyles({
 
 
 function InfractionsTable(props) {
+  const { employee, handleDelete } = props
+  
+  
+  
   const classes = useStyles();
-  const { employee, handleDelete, toggleModal } = props
   
-  
-  // const [infraction, setInfraction] = useState({
-  //   id: '',
-  //   attendance: '',
-  //   date: '',
-  //   points: '',
-  //   reason: ''
-  // })
-  
-    
-//  console.log(employee.infractions)
+
 
   return (
     <TableContainer component={Paper}>
@@ -54,22 +51,24 @@ function InfractionsTable(props) {
               <TableCell component="th" scope="row" align="center">
                 {row.id}
               </TableCell>
-              <TableCell align="center">{row.attendance}</TableCell>
+              <TableCell align="center" >{row.attendance}</TableCell>
               <TableCell align="center">{row.date}</TableCell>
               <TableCell align="center">{row.points}</TableCell>
               <TableCell align="center">{row.reason}</TableCell>
               <TableCell align="center">
-                <EditIcon />
+                    <IconButton>
+                    <EditIcon />
+                  </IconButton>
               </TableCell>
               <TableCell align="center">
                 <button className='button-3' onClick={() => handleDelete(row.id)}>Delete</button>
               </TableCell>
-              {/* <TableCell align="right">{row.protein}</TableCell> */}
             </TableRow>
           ))}
         </TableBody>
       </Table>
-    </TableContainer>
+      </TableContainer>
+      
   );
 }
 

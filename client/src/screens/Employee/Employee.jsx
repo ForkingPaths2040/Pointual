@@ -4,7 +4,7 @@ import './Employee.css'
 import {getEmployee} from '../../services/employees'
 import EmployeeDetail from '../../components/EmployeeDetail.jsx/EmployeeDetail';
 import InfractionsTable from '../../components/InfractionsTable/InfractionsTable'
-import {deleteInfraction, postInfraction} from '../../services/infractions'
+import {deleteInfraction, postInfraction, putInfraction} from '../../services/infractions'
 import Modal from 'react-modal'
 import "react-datepicker/dist/react-datepicker.css"
 
@@ -14,6 +14,7 @@ function Employee(props) {
   const [employee, setEmployee] = useState({});
   const [isDeleted, setIsDeleted] = useState(false)
   const [isCreated, setIsCreated] = useState(false)
+  const [isEdited, setIsEdited] = useState(false)
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
     attendance: 'tardy',
@@ -35,7 +36,15 @@ function Employee(props) {
   
   function toggleModal() {
     setIsOpen(!isOpen);
+    setFormData({
+      attendance: 'tardy',
+      date: '',
+      points: 1,
+      reason: '',
+      employee_id: id
+    })
   }
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -44,9 +53,14 @@ function Employee(props) {
         [name]: value
     }))
   }
+
+  const handleEdit = async (infraction) => {
+    await putInfraction(id, infraction)
+    setIsEdited(!isEdited)
+  }
+
   const handleCreate = async (infraction) => {
-    const newInfraction = await postInfraction(id, infraction);
-    setFormData(prevState => [...prevState, newInfraction]);
+    await postInfraction(id, infraction);
     setIsCreated(!isDeleted)
     setIsOpen(!isOpen)
   }
@@ -64,7 +78,7 @@ function Employee(props) {
           <button className="button-4" onClick={toggleModal}>New Entry</button>
           {/* <AddIcon style={{marginLeft: "10px", color:"#1c8bf9", fontSize: "2em", fontWeight: "2px"}}/> */}
         </div>
-        <InfractionsTable employee={employee} handleDelete={handleDelete} toggleModal={toggleModal}/>
+        <InfractionsTable employee={employee} handleDelete={handleDelete}  />
       </div>
       <Modal
         isOpen={isOpen}
@@ -73,7 +87,7 @@ function Employee(props) {
         ariaHideApp={false}
       >
         <button onClick={toggleModal}>close</button>
-          <form onSubmit={(e) => {
+          <form className="form-create" onSubmit={(e) => {
       e.preventDefault();
       handleCreate(formData);
     }}>

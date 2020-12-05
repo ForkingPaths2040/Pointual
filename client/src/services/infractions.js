@@ -26,3 +26,12 @@ export const postInfraction = async (id, formData) => {
     throw error
   }
 }
+
+export const putInfraction = async (id, id2, formData) => {
+  try {
+    const response = await api.put(`/employees/${id}/infractions${id2}`, formData)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
