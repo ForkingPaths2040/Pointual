@@ -16,6 +16,8 @@ function Employee(props) {
   const [isCreated, setIsCreated] = useState(false)
   const [isEdited, setIsEdited] = useState(false)
   const [isOpen, setIsOpen] = useState(false);
+  // const [points, setPoints] = useState(0);
+  
   const [formData, setFormData] = useState({
     attendance: 'tardy',
     date: '',
@@ -29,10 +31,20 @@ function Employee(props) {
     const fetchEmployee = async () => {
       const resp = await getEmployee(id);
       setEmployee(resp);
-      
     }
     fetchEmployee();
   }, [id, isDeleted, isCreated, isEdited])
+
+  // useEffect(() => {
+  //   const handleSum = () => {
+  //     const totalInfractions = employee.infractions.map((infraction) => {
+  //       return infraction.points
+  //     })
+  //     const sum = totalInfractions.reduce((sum, value) => sum + value)
+  //     setPoints(sum)
+  //   }
+  //   handleSum();
+  // }, [employee.infractions])
   
   function toggleModal() {
     setIsOpen(!isOpen);
@@ -45,7 +57,6 @@ function Employee(props) {
     })
   }
   
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({

@@ -90,6 +90,25 @@
   border: solid 1px #1c8bf9;
 }
 
+.button-5 {
+  font-size: 13px;
+  color: #ffffff;
+  background-color: #bd2c26;
+  border: 0;
+  width: 108px;
+  height: 35px;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.button-5:hover {
+  background-color: #fff;
+  color: #bd2c26;
+  border: solid 1px #bd2c26;
+}
+
 /* Global <hr/> */
 .line-break-1 {
   border: solid 1px lightgrey;

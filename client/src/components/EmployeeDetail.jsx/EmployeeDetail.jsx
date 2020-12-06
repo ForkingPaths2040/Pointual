@@ -1,9 +1,17 @@
 import React from 'react';
 import './EmployeeDetail.css'
+import MailIcon from '@material-ui/icons/Mail';
+import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
+import TodayIcon from '@material-ui/icons/Today';
+import HourglassEmptyIcon from '@material-ui/icons/HourglassEmpty';
+import WorkIcon from '@material-ui/icons/Work';
 
 function EmployeeDetail(props) {
-  const { employee } = props
+  const { employee} = props
   console.log()
+
+
+
   return (
     <div className="employee-detail-container">
       <div className='employee-image-container'>
@@ -23,10 +31,14 @@ function EmployeeDetail(props) {
       <hr className="line-break-1"/>
       <div className='employee-data-container'>
         <div className='data-icons'>
-
+          <MailIcon />
+          <PhoneIphoneIcon />
+          <WorkIcon />
+          <TodayIcon />
+          <HourglassEmptyIcon />
         </div>
         <div className='data-details'>
-          <p>{employee.email}</p>
+          <p id="email">{employee.email}</p>
           <p>{employee.phone_number}</p>
           <p>{employee.position}</p>
           <p>{employee.hire_date}</p>

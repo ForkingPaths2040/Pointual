@@ -1,0 +1,26 @@
+.edit-form-container {
+  width: 100%;
+}
+
+.form-create {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.form-create > input,
+textarea,
+select {
+  width: 86%;
+  height: 51%;
+  padding: 12px 20px;
+  margin: 8px auto;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  box-sizing: border-box;
+}
+
+#edit-submit {
+  position: relative;
+  top: 97px;
+}

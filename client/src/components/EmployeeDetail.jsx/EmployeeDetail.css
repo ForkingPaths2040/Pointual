@@ -48,11 +48,22 @@
 .employee-data-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  width: 100%;
 }
+.data-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .data-details {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 48%;
   font-size: 12px;
+}
+
+#email {
+  overflow-x: scroll hidden;
 }
