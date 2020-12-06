@@ -2,15 +2,13 @@
   width: 100%;
 }
 
-.form-edit {
+.form {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.form-edit > input,
-textarea,
-select {
+.form-edit {
   width: 86%;
   height: 51%;
   padding: 12px 20px;

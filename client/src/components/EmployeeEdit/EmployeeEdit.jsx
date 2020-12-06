@@ -40,13 +40,13 @@ function EmployeeEdit(props) {
   return (
     <div className="edit-form-container">
       <h3 style={{ color:"black"}}>Edit Infraction {id} </h3>
-      <form className="form-edit" onSubmit={(e) => {
+      <form className="form" onSubmit={(e) => {
       e.preventDefault();
        handleEdit(employee_id, id, formData);
     }}>
         <label>Attendance:
            <br />
-        <select type='text' name='attendance' onChange={handleChange} value={formData.attendance}>
+        <select className="form-edit" type='text' name='attendance' onChange={handleChange} value={formData.attendance}>
               <option>tardy</option>
               <option>absence</option>
         </select>
@@ -69,7 +69,7 @@ function EmployeeEdit(props) {
       <br />
         <label>Points:
         <br />
-        <select name='points' type='number' value={formData.points} onChange={handleChange} style={{width:"99%"}}>
+        <select className="form-edit" name='points' type='number' value={formData.points} onChange={handleChange} style={{width:"99%"}}>
               <option>1</option> 
               <option>2</option>
               <option>3</option>
@@ -79,7 +79,8 @@ function EmployeeEdit(props) {
         <br />
         <label>Reason:
         <br />
-        <textarea
+          <textarea
+          className="form-edit" 
           type='text'
           name='reason'
           value={formData.reason}

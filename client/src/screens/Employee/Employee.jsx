@@ -9,7 +9,7 @@ import Modal from 'react-modal'
 import "react-datepicker/dist/react-datepicker.css"
 
 function Employee(props) {
-  // maybe try useEffect in the EmployeeCards?
+  
   const { employee_id, id } = useParams();
   const [employee, setEmployee] = useState({});
   const [isDeleted, setIsDeleted] = useState(false)
@@ -89,7 +89,6 @@ function Employee(props) {
         <div className="table-page-header">
           <h2 className="infraction-title">Infractions</h2>
           <button className="button-4" onClick={toggleModal}>New Entry</button>
-          {/* <AddIcon style={{marginLeft: "10px", color:"#1c8bf9", fontSize: "2em", fontWeight: "2px"}}/> */}
         </div>
         <InfractionsTable employee={employee} handleDelete={handleDelete}  handleEdit={handleEdit}/>
       </div>
@@ -98,26 +97,52 @@ function Employee(props) {
         onRequestClose={toggleModal}
         contentLabel="My dialog"
         ariaHideApp={false}
+        style={{
+          overlay: {
+            backgroundColor: 'rgba(0, 0, 0, 0.75)'
+          },
+          content: {
+            border: '1px solid #ccc',
+            background: 'rgba(51, 51, 51, 1)',
+            left: 300,
+            right: 300,
+            
+          }
+        }}
       >
-        <button onClick={toggleModal}>close</button>
+        <button className="button-5" onClick={toggleModal}>Close</button>
           <form className="form-create" onSubmit={(e) => {
       e.preventDefault();
       handleCreate(formData);
     }}>
-      <h3>New Infraction</h3>
+      <h3 style={{color:"white"}}>New Infraction</h3>
       <label>Attendance:
-        <select type='text' name='attendance' onChange={handleChange} value={formData.attendance}>
+        <select className="form-add" type='text' name='attendance' onChange={handleChange} value={formData.attendance}>
               <option>tardy</option>
               <option>absence</option>
         </select>
 
           </label>
-      <label>Date:
-      <input name='date' type='date' value={formData.date} onChange={handleChange} />
+          <label>Date:
+          <br/>
+            <input name='date' type='date' value={formData.date} onChange={handleChange} style={{
+        width: "71%",
+        height: "23%",
+        color: "rgb(191, 191, 191)",
+        fontSize: "16px",
+        padding: "12px 20px",
+        margin: "8px auto",
+        background:"none",
+        border: "none",
+        borderBottom: "solid 1px rgb(191, 191, 191)",
+        boxSizing: "borderBox",
+        fontFamily: "Helvetica"}
+      } />
       </label>
-      
-      <label>Points:
-        <select name='points' type='number' value={formData.points} onChange={handleChange}>
+      <br/>
+          <label>Points:
+          <br/>
+        <select className="form-add" name='points' type='number' value={formData.points} onChange={handleChange}>
               <option>1</option> 
               <option>2</option>
               <option>3</option>
@@ -131,17 +156,20 @@ function Employee(props) {
           name='reason'
           value={formData.reason}
           onChange={handleChange}
+          className="form-add"
             />
         </label>
-      <label>Employee ID:
+          <label>Employee ID:
+          <br />
         <input
           type='text'
           name='employee_id'
-              value={formData.employee_id}
-              readOnly
+          value={formData.employee_id}
+          readOnly
+          className="reformat-input"
             />
         </label>
-          <button>Submit</button>
+          <button className="button-6">Submit</button>
         </form>
       </Modal>
     </div>

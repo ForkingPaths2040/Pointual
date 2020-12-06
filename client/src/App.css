@@ -108,6 +108,24 @@
   color: #bd2c26;
   border: solid 1px #bd2c26;
 }
+.button-6 {
+  font-size: 13px;
+  color: rgb(34, 34, 34);
+  background-color: rgb(128, 189, 247);
+  border: 0;
+  width: 108px;
+  height: 35px;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.button-6:hover {
+  background-color: #fff;
+  color: rgb(34, 34, 34);
+  border: solid 1px rgb(128, 189, 247);
+}
 
 /* Global <hr/> */
 .line-break-1 {

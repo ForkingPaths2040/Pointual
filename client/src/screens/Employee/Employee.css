@@ -26,17 +26,38 @@
   text-align: left;
   margin: 0 0 14px;
 }
-
+.form-create {
+  display: flex;
+  flex-direction: column;
+  width: 57%;
+  margin: 0 auto;
+}
 .form-create > label {
-  color: #1c8bf9;
+  color: rgb(128, 189, 247);
 }
-.form-create > select {
-  border: none;
+
+.reformat-input {
+  width: 86%;
+  height: 51%;
+  color: rgb(191, 191, 191);
+  padding: 12px 20px;
+  margin: 8px auto;
   background: none;
-  border-bottom: solid 1px rgb(28, 139, 249);
-  color: lightgray;
-  cursor: pointer;
+  border: none;
+  border-bottom: 1px solid rgb(191, 191, 191);
+  box-sizing: border-box;
+  font-size: 16px;
 }
-.form-create > h3 {
-  color: #ffffff;
+.form-add {
+  width: 86%;
+  height: 51%;
+  color: rgb(191, 191, 191);
+  font-size: 16px;
+  padding: 12px 20px;
+  margin: 8px auto;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgb(191, 191, 191);
+  box-sizing: border-box;
+  font-family: "Helvetica";
 }
