@@ -40,7 +40,7 @@ function EmployeeEdit(props) {
   return (
     <div className="edit-form-container">
       <h3 style={{ color:"black"}}>Edit Infraction {id} </h3>
-      <form className="form-create" onSubmit={(e) => {
+      <form className="form-edit" onSubmit={(e) => {
       e.preventDefault();
        handleEdit(employee_id, id, formData);
     }}>

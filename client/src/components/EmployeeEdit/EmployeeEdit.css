@@ -2,13 +2,13 @@
   width: 100%;
 }
 
-.form-create {
+.form-edit {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.form-create > input,
+.form-edit > input,
 textarea,
 select {
   width: 86%;
