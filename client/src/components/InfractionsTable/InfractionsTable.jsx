@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {Route, Link} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -10,9 +10,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import EditIcon from '@material-ui/icons/Edit';
 import IconButton from "@material-ui/core/IconButton"
-import DoneIcon from "@material-ui/icons/DoneAllTwoTone";
-import Input from "@material-ui/core/Input";
-import { getEmployees } from '../../services/employees';
 import EmployeeEdit from '../../components/EmployeeEdit/EmployeeEdit';
 
 
@@ -24,7 +21,7 @@ const useStyles = makeStyles({
 
 
 function InfractionsTable(props) {
-  const { employee, handleDelete } = props
+  const { employee, handleDelete, handleEdit } = props
   
   
   
@@ -35,7 +32,7 @@ function InfractionsTable(props) {
   return (
     <>
       <Route path='/employees/:employee_id/infractions/:id'>
-        <EmployeeEdit />
+        <EmployeeEdit handleEdit={handleEdit} employee={employee}/>
       </Route>
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">

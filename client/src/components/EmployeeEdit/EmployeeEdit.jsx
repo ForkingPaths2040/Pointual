@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import './EmployeeEdit.css'
-import {putInfraction} from '../../services/infractions'
 import { useParams } from 'react-router-dom';
 
 function EmployeeEdit(props) {
-  const { employee_id, id  } = useParams()
-  // const {employee}
+  const {handleEdit} = props
+  const { employee_id, id } = useParams()
   const [formData, setFormData] = useState({
     attendance: 'tardy',
     date: '',
@@ -13,19 +12,6 @@ function EmployeeEdit(props) {
     reason: '',
     // employee_id: id
   });
-  const [isEdited, setIsEdited] = useState(false);
-  
-  // useEffect(() => {
-  //   const prefillForm = () => {
-  //     const infraction = props.foods.find(food => food.id === Number(id));
-  //     setFormData({
-  //       name: foodItem.name
-  //     })
-  //   }
-  //   if (props.foods.length){
-  //     prefillForm();
-  //   }
-  // }, [props.foods])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,18 +22,15 @@ function EmployeeEdit(props) {
   }
 
 
-  const handleEdit = async (id, id2, formData) => {
-    await putInfraction(id, id2, formData)
-    setIsEdited(!isEdited)
-  }
+  
 
   return (
     <div>
       <form className="form-create" onSubmit={(e) => {
       e.preventDefault();
-      handleEdit(employee_id, id, formData);
+       handleEdit(employee_id, id, formData);
     }}>
-        <h3>New Infraction</h3>
+        <h3>Edit Infraction {id}</h3>
       <label>Attendance:
         <select type='text' name='attendance' onChange={handleChange} value={formData.attendance}>
               <option>tardy</option>
