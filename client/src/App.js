@@ -1,4 +1,5 @@
 import './App.css';
+import './mobile.css'
 import { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
 
@@ -23,7 +24,7 @@ function App() {
       
     }
     handleVerify();
-  }, [])
+  }, [history])
 
   const handleLogin = async (loginData) => {
     const userData = await loginUser(loginData);

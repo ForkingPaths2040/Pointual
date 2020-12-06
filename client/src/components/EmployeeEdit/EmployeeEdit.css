@@ -9,10 +9,11 @@
 }
 
 .form-edit {
-  width: 86%;
+  width: 100%;
   height: 51%;
   padding: 12px 20px;
   margin: 8px auto;
+  background: none;
   border: 1px solid #ccc;
   border-radius: 7px;
   box-sizing: border-box;

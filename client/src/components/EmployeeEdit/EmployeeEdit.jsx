@@ -61,6 +61,8 @@ function EmployeeEdit(props) {
         padding: "12px 20px",
         margin: "8px auto",
         border: "1px solid #ccc",
+        color: "black",
+        background: "none",
         borderRadius: "7px",
         boxSizing: "borderBox",
         fontFamily: "Helvetica"}
