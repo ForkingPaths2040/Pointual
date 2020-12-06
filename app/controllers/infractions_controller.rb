@@ -55,6 +55,6 @@ class InfractionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def infraction_params
-      params.require(:infraction).permit(:attendance, :date, :points, :reason)
+      params.require(:infraction).permit(:attendance, :date, :points, :reason, :employee_id)
     end
 end

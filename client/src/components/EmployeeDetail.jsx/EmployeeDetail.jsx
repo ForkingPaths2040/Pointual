@@ -2,7 +2,8 @@ import React from 'react';
 import './EmployeeDetail.css'
 
 function EmployeeDetail(props) {
-  const {employee} = props
+  const { employee } = props
+  console.log()
   return (
     <div className="employee-detail-container">
       <div className='employee-image-container'>
