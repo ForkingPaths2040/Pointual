@@ -31,3 +31,13 @@
 #made-easy {
   margin: 0px;
 }
+
+@media screen and (max-width: 500px) {
+  #content-desktop {
+    display: none;
+  }
+  .login-form {
+    width: 100%;
+    border: none;
+  }
+}

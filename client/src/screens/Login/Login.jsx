@@ -9,8 +9,8 @@ function Login(props) {
         <LoginForm
           handleLogin={props.handleLogin}
           currentUser={props.currentUser}/>
-        <img className='hero-image' src={hero} alt="Reviewing candidates illustration" />
-          <div className='hero-p'>
+        <img id="content-desktop" className='hero-image' src={hero} alt="Reviewing candidates illustration" />
+          <div id="content-desktop" className='hero-p'>
             <p className='medium-font' id='time-attendance'>Time and attendance</p>
             <p className='medium-font' id='made-easy'>management made easy.</p>
           </div>
