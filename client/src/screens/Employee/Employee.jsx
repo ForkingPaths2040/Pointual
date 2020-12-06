@@ -10,7 +10,7 @@ import "react-datepicker/dist/react-datepicker.css"
 
 function Employee(props) {
   // maybe try useEffect in the EmployeeCards?
-  const { id } = useParams();
+  const { employee_id, id } = useParams();
   const [employee, setEmployee] = useState({});
   const [isDeleted, setIsDeleted] = useState(false)
   const [isCreated, setIsCreated] = useState(false)
@@ -21,7 +21,7 @@ function Employee(props) {
     date: '',
     points: 1,
     reason: '',
-    employee_id: id
+    employee_id: employee_id
   })
 
 
@@ -32,7 +32,7 @@ function Employee(props) {
       
     }
     fetchEmployee();
-  }, [id, isDeleted, isCreated])
+  }, [id, isDeleted, isCreated, isEdited])
   
   function toggleModal() {
     setIsOpen(!isOpen);
@@ -54,14 +54,16 @@ function Employee(props) {
     }))
   }
 
-  const handleEdit = async (infraction) => {
-    await putInfraction(id, infraction)
-    setIsEdited(!isEdited)
+  const handleEdit = async (id, id2, formData) => {
+    await putInfraction(id, id2, formData)
+    setIsEdited(!isEdited) 
   }
+  
+  
 
   const handleCreate = async (infraction) => {
     await postInfraction(id, infraction);
-    setIsCreated(!isDeleted)
+    setIsCreated(!isCreated)
     setIsOpen(!isOpen)
   }
   const handleDelete = async (id) => {
@@ -78,7 +80,7 @@ function Employee(props) {
           <button className="button-4" onClick={toggleModal}>New Entry</button>
           {/* <AddIcon style={{marginLeft: "10px", color:"#1c8bf9", fontSize: "2em", fontWeight: "2px"}}/> */}
         </div>
-        <InfractionsTable employee={employee} handleDelete={handleDelete}  />
+        <InfractionsTable employee={employee} handleDelete={handleDelete}  handleEdit={handleEdit}/>
       </div>
       <Modal
         isOpen={isOpen}

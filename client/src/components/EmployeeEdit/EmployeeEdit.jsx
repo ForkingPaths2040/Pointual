@@ -1,31 +1,30 @@
 import React, {useState} from 'react';
 import './EmployeeEdit.css'
-import {putInfraction} from '../../services/infractions'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function EmployeeEdit(props) {
-  const { employee_id, id  } = useParams()
-  // const {employee}
+  const {employee, handleEdit} = props
+  const { employee_id, id } = useParams()
   const [formData, setFormData] = useState({
     attendance: 'tardy',
     date: '',
     points: 1,
     reason: '',
-    // employee_id: id
   });
-  const [isEdited, setIsEdited] = useState(false);
-  
-  // useEffect(() => {
-  //   const prefillForm = () => {
-  //     const infraction = props.foods.find(food => food.id === Number(id));
-  //     setFormData({
-  //       name: foodItem.name
-  //     })
-  //   }
-  //   if (props.foods.length){
-  //     prefillForm();
-  //   }
-  // }, [props.foods])
+
+  useEffect(() => { 
+    const prefillForm = () => {
+      const infraction = employee.infractions.find(infraction => infraction.id === Number(id))
+      setFormData({
+        attendance: infraction.attendance,
+        date: infraction.date,
+        points: infraction.points,
+        reason: infraction.reason
+      })
+    }
+    prefillForm()
+  },[])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,18 +35,15 @@ function EmployeeEdit(props) {
   }
 
 
-  const handleEdit = async (id, id2, formData) => {
-    await putInfraction(id, id2, formData)
-    setIsEdited(!isEdited)
-  }
+  
 
   return (
     <div>
       <form className="form-create" onSubmit={(e) => {
       e.preventDefault();
-      handleEdit(employee_id, id, formData);
+       handleEdit(employee_id, id, formData);
     }}>
-        <h3>New Infraction</h3>
+        <h3 style={{ color:"black"}}>Edit Infraction {id} </h3>
       <label>Attendance:
         <select type='text' name='attendance' onChange={handleChange} value={formData.attendance}>
               <option>tardy</option>
@@ -56,7 +52,7 @@ function EmployeeEdit(props) {
 
           </label>
       <label>Date:
-      <input name='date' type='date' value={formData.date} onChange={handleChange} />
+      <input name='date' type='date' value={formData.date} onChange={handleChange} readOnly/>
       </label>
       
       <label>Points:
@@ -77,7 +73,10 @@ function EmployeeEdit(props) {
             />
         </label>
           <button>Submit</button>
-        </form>
+      </form>
+      <Link to={`/employees/${employee_id}`}>
+        <button>Close</button>
+        </Link>
     </div>
   );
 }
