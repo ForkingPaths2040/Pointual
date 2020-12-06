@@ -24,7 +24,7 @@ function EmployeeEdit(props) {
       })
     }
     prefillForm()
-  },[])
+  },[id, employee.infractions])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,44 +38,65 @@ function EmployeeEdit(props) {
   
 
   return (
-    <div>
-      <form className="form-create" onSubmit={(e) => {
+    <div className="edit-form-container">
+      <h3 style={{ color:"black"}}>Edit Infraction {id} </h3>
+      <form className="form" onSubmit={(e) => {
       e.preventDefault();
        handleEdit(employee_id, id, formData);
     }}>
-        <h3 style={{ color:"black"}}>Edit Infraction {id} </h3>
-      <label>Attendance:
-        <select type='text' name='attendance' onChange={handleChange} value={formData.attendance}>
+        <label>Attendance:
+           <br />
+        <select className="form-edit" type='text' name='attendance' onChange={handleChange} value={formData.attendance}>
               <option>tardy</option>
               <option>absence</option>
         </select>
 
-          </label>
-      <label>Date:
-      <input name='date' type='date' value={formData.date} onChange={handleChange} readOnly/>
+        </label>
+        <br />
+        <label>Date:
+        <br />
+      <input name='date' type='date' value={formData.date} onChange={handleChange} readOnly style={{
+        width: "68%",
+        height: "23%",
+        padding: "12px 20px",
+        margin: "8px auto",
+        border: "1px solid #ccc",
+        borderRadius: "7px",
+        boxSizing: "borderBox",
+        fontFamily: "Helvetica"}
+        }/>
       </label>
-      
-      <label>Points:
-        <select name='points' type='number' value={formData.points} onChange={handleChange}>
+      <br />
+        <label>Points:
+        <br />
+        <select className="form-edit" name='points' type='number' value={formData.points} onChange={handleChange} style={{width:"99%"}}>
               <option>1</option> 
               <option>2</option>
               <option>3</option>
               <option>5</option>
         </select>
-            
         </label>
-      <label>Reason:
-        <textarea
+        <br />
+        <label>Reason:
+        <br />
+          <textarea
+          className="form-edit" 
           type='text'
           name='reason'
           value={formData.reason}
-          onChange={handleChange}
+            onChange={handleChange}
+            style={{
+              fontFamily: "Helvetica",
+              fontSize: "14px",
+              width: "157%",
+              height:"59%"
+            }}
             />
         </label>
-          <button>Submit</button>
+          <button className="button-4" id='edit-submit'>Submit</button>
       </form>
       <Link to={`/employees/${employee_id}`}>
-        <button>Close</button>
+        <button className="button-5">Close</button>
         </Link>
     </div>
   );
