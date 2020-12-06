@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './EmployeeEdit.css'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function EmployeeEdit(props) {
   const {handleEdit} = props
@@ -10,7 +10,6 @@ function EmployeeEdit(props) {
     date: '',
     points: 1,
     reason: '',
-    // employee_id: id
   });
 
   const handleChange = (e) => {
@@ -30,7 +29,7 @@ function EmployeeEdit(props) {
       e.preventDefault();
        handleEdit(employee_id, id, formData);
     }}>
-        <h3>Edit Infraction {id}</h3>
+        <h3 style={{ color:"black"}}>Edit Infraction {id} </h3>
       <label>Attendance:
         <select type='text' name='attendance' onChange={handleChange} value={formData.attendance}>
               <option>tardy</option>
@@ -60,7 +59,10 @@ function EmployeeEdit(props) {
             />
         </label>
           <button>Submit</button>
-        </form>
+      </form>
+      <Link to={`/employees/${employee_id}`}>
+        <button>Close</button>
+        </Link>
     </div>
   );
 }
