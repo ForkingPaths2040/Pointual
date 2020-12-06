@@ -27,9 +27,9 @@ export const postInfraction = async (id, formData) => {
   }
 }
 
-export const putInfraction = async (id, id2, formData) => {
+export const putInfraction = async (id, id2, infractionData) => {
   try {
-    const response = await api.put(`/employees/${id}/infractions${id2}`, formData)
+    const response = await api.put(`/employees/${id}/infractions/${id2}`, { infraction: infractionData })
     return response.data
   } catch (error) {
     throw error

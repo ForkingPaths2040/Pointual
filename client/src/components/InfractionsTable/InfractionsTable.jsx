@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {useParams} from 'react-router-dom'
+import {Route, Link} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -13,6 +13,7 @@ import IconButton from "@material-ui/core/IconButton"
 import DoneIcon from "@material-ui/icons/DoneAllTwoTone";
 import Input from "@material-ui/core/Input";
 import { getEmployees } from '../../services/employees';
+import EmployeeEdit from '../../components/EmployeeEdit/EmployeeEdit';
 
 
 const useStyles = makeStyles({
@@ -32,6 +33,10 @@ function InfractionsTable(props) {
 
 
   return (
+    <>
+      <Route path='/employees/:employee_id/infractions/:id'>
+        <EmployeeEdit />
+      </Route>
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
@@ -56,9 +61,11 @@ function InfractionsTable(props) {
               <TableCell align="center">{row.points}</TableCell>
               <TableCell align="center">{row.reason}</TableCell>
               <TableCell align="center">
-                    <IconButton>
+                <Link to={`/employees/${employee.id}/infractions/${row.id}`}>
+                  <IconButton>
                     <EditIcon />
                   </IconButton>
+                </Link>
               </TableCell>
               <TableCell align="center">
                 <button className='button-3' onClick={() => handleDelete(row.id)}>Delete</button>
@@ -68,6 +75,7 @@ function InfractionsTable(props) {
         </TableBody>
       </Table>
       </TableContainer>
+      </>
       
   );
 }
