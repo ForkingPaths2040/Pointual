@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import './EmployeeEdit.css'
 import { Link, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function EmployeeEdit(props) {
-  const {handleEdit} = props
+  const {employee, handleEdit} = props
   const { employee_id, id } = useParams()
   const [formData, setFormData] = useState({
     attendance: 'tardy',
@@ -11,6 +12,19 @@ function EmployeeEdit(props) {
     points: 1,
     reason: '',
   });
+
+  useEffect(() => { 
+    const prefillForm = () => {
+      const infraction = employee.infractions.find(infraction => infraction.id === Number(id))
+      setFormData({
+        attendance: infraction.attendance,
+        date: infraction.date,
+        points: infraction.points,
+        reason: infraction.reason
+      })
+    }
+    prefillForm()
+  },[])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
