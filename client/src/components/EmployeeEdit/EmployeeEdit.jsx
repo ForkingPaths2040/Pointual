@@ -52,7 +52,7 @@ function EmployeeEdit(props) {
 
           </label>
       <label>Date:
-      <input name='date' type='date' value={formData.date} onChange={handleChange} />
+      <input name='date' type='date' value={formData.date} onChange={handleChange} readOnly/>
       </label>
       
       <label>Points:
