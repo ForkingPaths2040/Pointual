@@ -1,4 +1,4 @@
-# Pointual
+# [Pointual](https://pointual.netlify.app/)
 
 An employee management app for a time and attendance policy. Effectively, admins and employees are presumably already available. An admin is able to track employees through their tardies and absences along with when they were documented after reaching certain levels of accumulation.
 
@@ -89,40 +89,38 @@ src
 
 #### Time Estimates
 
-| Backend                    | Priority | Estimated Time | Time Invested | Actual Time |
-| -------------------------- | :------: | :------------: | :-----------: | :---------: |
-| File structure setup       |    H     |     1 hrs      |               |     TBD     |
-| Rails setup                |    H     |    20 mins     |               |     TBD     |
-| Users/Authentication       |    H     |     3 hrs      |               |     TBD     |
-| Scaffold infractions       |    H     |    10 mins     |               |     TBD     |
-| Scaffold documentations    |    H     |    10 mins     |               |     TBD     |
-| Model associations         |    H     |     1 hrs      |               |     TBD     |
-| Verify Schema / Migrations |    H     |     1 hrs      |               |     TBD     |
-| Seed file                  |    H     |     1 hrs      |               |     TBD     |
-| Controllers                |    H     |     3 hrs      |               |     TBD     |
-| Routes                     |    H     |    10 mins     |               |     TBD     |
-| Testing backend            |    H     |     2 hrs      |               |     TBD     |
-| File structure setup       |    H     |     1 hrs      |               |     TBD     |
-| TOTAL                      |          |    13.8 hrs    |               |     TBD     |
+| Backend                    | Priority | Estimated Time | Actual Time |
+| -------------------------- | :------: | :------------: | :---------: |
+| File structure setup       |    H     |     1 hrs      |    2 hrs    |
+| Rails setup                |    H     |    20 mins     |   20 mins   |
+| Users/Authentication       |    H     |     3 hrs      |    3 hrs    |
+| Scaffold infractions       |    H     |    10 mins     |    1 hr     |
+| Scaffold documentations    |    H     |    10 mins     |     N/A     |
+| Model associations         |    H     |     1 hrs      |    1 hr     |
+| Verify Schema / Migrations |    H     |     1 hrs      |   30 min    |
+| Seed file                  |    H     |     1 hrs      |    2 hr     |
+| Controllers                |    H     |     3 hrs      |    5 hrs    |
+| Routes                     |    H     |    10 mins     |   30 mins   |
+| Testing backend            |    H     |     2 hrs      |    2 hrs    |
+| File structure setup       |    H     |     1 hrs      |    1 hrs    |
+| TOTAL                      |          |    13.8 hrs    |   18 hrs    |
 
 <br>
 
-| Frontend              | Priority | Estimated Time | Time Invested | Actual Time |
-| --------------------- | :------: | :------------: | :-----------: | :---------: |
-| File structure setup  |    H     |     1 hrs      |               |     TBD     |
-| Gather assets         |    H     |     1 hrs      |               |     TBD     |
-| Services              |    H     |     6 hrs      |               |     TBD     |
-| Design                |    H     |     15 hrs     |               |     TBD     |
-| Layout/Header         |    H     |     1 hrs      |               |     TBD     |
-| Layout/EmployeeDetail |    H     |     4 hrs      |               |     TBD     |
-| Employees             |    H     |     1 hrs      |               |     TBD     |
-| Infractions           |    H     |     3 hrs      |               |     TBD     |
-| Documentations        |    H     |     1 hrs      |               |     TBD     |
-| Other                 |    H     |     5 hrs      |               |     TBD     |
-| Mobile                |    H     |     10 hrs     |               |     TBD     |
-| Components            |    H     |     3 hrs      |               |     TBD     |
-| Debugging             |    H     |     3 hrs      |               |     TBD     |
-| TOTAL                 |          |     29 hrs     |               |     TBD     |
+| Frontend              | Priority | Estimated Time | Actual Time |
+| --------------------- | :------: | :------------: | ----------- |
+| File structure setup  |    H     |     1 hrs      | 1 hrs       |
+| Gather assets         |    H     |     1 hrs      | 1 hrs       |
+| Services              |    H     |     6 hrs      | 4 hrs       |
+| Design                |    H     |     10 hrs     | 15 hrs      |
+| Layout/Header         |    H     |     :1 hrs     |             |
+| Layout/EmployeeDetail |    H     |     :4 hrs     |             |
+| Employees             |    H     |     :1 hrs     |             |
+| Infractions           |    H     |     :3 hrs     |             |
+| Documentations        |    H     |     :1 hrs     | N/A         |
+| Components            |    H     |     3 hrs      | 8 hrs       |
+| Debugging             |    H     |     3 hrs      | 4 hrs       |
+| TOTAL                 |          |     29 hrs     | 32 hrs      |
 
 <br>
 
@@ -136,17 +134,17 @@ src
 
 ### Libraries and Dependencies
 
-|     Library      | Description                                                                                                                                           |
-| :--------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
-|      React       | _React is a JavaScript library for creating user interfaces._                                                                                         |
-| React Router Dom | _DOM bindings for React Router_                                                                                                                       |
-|      Axios       | _Promise based HTTP client for the browser and node.js_                                                                                               |
-|  ag-grid-react   | _Plugin_                                                                                                                                              |
-|      Rails       | _A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC)_ |
-|       CORS       | _Node.js CORS middleware_                                                                                                                             |
-|      bcrypt      | _bcrypt is a password-hashing function_                                                                                                               |
-|       jwt        | _JSON web-token_                                                                                                                                      |
-| Bootstrap Modal  | _overlay plugin_                                                                                                                                      |
+|         Library         | Description                                                                                                                                           |
+| :---------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
+|          React          | _React is a JavaScript library for creating user interfaces._                                                                                         |
+|    React Router Dom     | _DOM bindings for React Router_                                                                                                                       |
+|          Axios          | _Promise based HTTP client for the browser and node.js_                                                                                               |
+| Material UI Table/Icons | _Plugin_                                                                                                                                              |
+|          Rails          | _A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC)_ |
+|          CORS           | _Node.js CORS middleware_                                                                                                                             |
+|         bcrypt          | _bcrypt is a password-hashing function_                                                                                                               |
+|           jwt           | _JSON web-token_                                                                                                                                      |
+|       React Modal       | _overlay plugin_                                                                                                                                      |
 
 <br>
 
