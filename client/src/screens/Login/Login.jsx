@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../../components/Header/Header';
 import hero from '../../assets/images/candidates.png';
 import './Login.css'
 import LoginForm from '../../components/LoginForm/LoginForm';
