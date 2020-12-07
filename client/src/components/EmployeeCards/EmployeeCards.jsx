@@ -6,16 +6,16 @@ import './EmployeeCards.css'
 function EmployeeCards(props) {
   const [points, setPoints] = useState(0);
   
-  useEffect(() => {
-    const handleSum = () => {
-      const totalInfractions = props.employee?.infractions?.map((infraction) => {
-        return infraction.points
-      })
-      const sum = totalInfractions?.reduce((sum, value) => sum + value)
-      setPoints(sum)
-    }
-    handleSum();
-  }, [props.employee.infractions])
+  // useEffect(() => {
+  //   const handleSum = () => {
+  //     const totalInfractions = props.employee?.infractions?.map((infraction) => {
+  //       return infraction.points
+  //     })
+  //     const sum = totalInfractions?.reduce((sum, value) => sum + value)
+  //     setPoints(sum)
+  //   }
+  //   handleSum();
+  // }, [props.employee.infractions])
   
   return (
     <div className="employee-card">
@@ -25,7 +25,7 @@ function EmployeeCards(props) {
         </div>
         <div className='card-content-name'>{props.firstName} {props.lastName}</div>
         <div className='card-content-position'>{props.position}</div>
-        <div className='card-content-points'>{points} points</div>
+        <div className='card-content-points'>{props.points} points</div>
     </Link>
   </div>
   );
