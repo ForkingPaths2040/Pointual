@@ -68,10 +68,9 @@ function EmployeeEdit(props) {
         fontFamily: "Helvetica"}
         }/>
       </label>
-      <br />
         <label>Points:
         <br />
-        <select className="form-edit" name='points' type='number' value={formData.points} onChange={handleChange} style={{width:"99%"}}>
+        <select id='points' className="form-edit" name='points' type='number' value={formData.points} onChange={handleChange} style={{width:"99%"}}>
               <option>1</option> 
               <option>2</option>
               <option>3</option>
@@ -87,12 +86,7 @@ function EmployeeEdit(props) {
           name='reason'
           value={formData.reason}
             onChange={handleChange}
-            style={{
-              fontFamily: "Helvetica",
-              fontSize: "14px",
-              width: "157%",
-              height:"59%"
-            }}
+            id="reason-edit"
             />
         </label>
           <button className="button-4" id='edit-submit'>Submit</button>

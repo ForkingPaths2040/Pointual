@@ -65,5 +65,15 @@
 }
 
 #email {
-  overflow-x: scroll hidden;
+  overflow-x: scroll;
+}
+
+@media screen and (max-width: 800px) {
+  .detail-mask {
+    width: 75px;
+    height: 75px;
+  }
+  .detail-image {
+    height: 150%;
+  }
 }

@@ -7,12 +7,14 @@ function Login(props) {
       <div className='login-hero-container'>
         <LoginForm
           handleLogin={props.handleLogin}
-          currentUser={props.currentUser}/>
+        currentUser={props.currentUser} />
+      <div className='hero-container'>
         <img id="content-desktop" className='hero-image' src={hero} alt="Reviewing candidates illustration" />
           <div id="content-desktop" className='hero-p'>
             <p className='medium-font' id='time-attendance'>Time and attendance</p>
             <p className='medium-font' id='made-easy'>management made easy.</p>
-          </div>
+        </div>
+      </div>  
       </div>
   );
 }
