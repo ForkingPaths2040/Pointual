@@ -16,15 +16,17 @@ function Employees(props) {
     }
    fetchEmployees()
   }, [])
+
   const employeesJSX = employees.map((employee, index) => (
     <EmployeeCards
       _id={employee.id}
       firstName={employee.first_name}
       lastName={employee.last_name}
-      imgURL= {employee.img_URL}
+      imgURL={employee.img_URL}
       position={employee.position}
       points={employee.points}
       key={index}
+      employee={employee}
     />
   ));
   return (

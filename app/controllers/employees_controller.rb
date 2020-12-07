@@ -6,7 +6,7 @@ class EmployeesController < ApplicationController
   def index
     @employees = Employee.all
 
-    render json: @employees
+    render json: @employees, include: :infractions
   end
 
   # GET /employees/1

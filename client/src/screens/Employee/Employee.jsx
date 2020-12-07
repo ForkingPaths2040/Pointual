@@ -16,7 +16,7 @@ function Employee(props) {
   const [isCreated, setIsCreated] = useState(false)
   const [isEdited, setIsEdited] = useState(false)
   const [isOpen, setIsOpen] = useState(false);
-  // const [points, setPoints] = useState(0);
+  const [points, setPoints] = useState(0);
   
   const [formData, setFormData] = useState({
     attendance: 'tardy',
@@ -35,16 +35,16 @@ function Employee(props) {
     fetchEmployee();
   }, [id, isDeleted, isCreated, isEdited])
 
-  // useEffect(() => {
-  //   const handleSum = () => {
-  //     const totalInfractions = employee.infractions.map((infraction) => {
-  //       return infraction.points
-  //     })
-  //     const sum = totalInfractions.reduce((sum, value) => sum + value)
-  //     setPoints(sum)
-  //   }
-  //   handleSum();
-  // }, [employee.infractions])
+  useEffect(() => {
+    const handleSum = () => {
+      const totalInfractions = employee.infractions?.map((infraction) => {
+        return infraction.points
+      })
+      const sum = totalInfractions?.reduce((sum, value) => sum + value)
+      setPoints(sum)
+    }
+    handleSum();
+  }, [employee.infractions])
   
   function toggleModal() {
     setIsOpen(!isOpen);
@@ -84,7 +84,7 @@ function Employee(props) {
 
   return (
     <div className='employee-container'>
-      <EmployeeDetail employee={employee} />
+      <EmployeeDetail employee={employee} points={points}/>
       <div className='grid-container'>
         <div className="table-page-header">
           <h2 className="infraction-title">Infractions</h2>

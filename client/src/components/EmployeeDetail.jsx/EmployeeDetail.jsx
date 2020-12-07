@@ -7,7 +7,7 @@ import HourglassEmptyIcon from '@material-ui/icons/HourglassEmpty';
 import WorkIcon from '@material-ui/icons/Work';
 
 function EmployeeDetail(props) {
-  const { employee} = props
+  const { employee, points} = props
   console.log()
 
 
@@ -19,7 +19,7 @@ function EmployeeDetail(props) {
           <img className='detail-image' src={employee.img_URL} alt={`${employee.first_name} ${employee.last_name}`} />
         </div>
         <p className='detail-name'>{employee.first_name} {employee.last_name}</p>
-        <p className='detail-points'>{employee.points} points</p>
+        <p className='detail-points'>{points} points</p>
       </div>
       <hr className="line-break-1"/>
       <div className='employee-stats-container'>
