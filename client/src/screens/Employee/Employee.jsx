@@ -104,8 +104,8 @@ function Employee(props) {
           content: {
             border: '1px solid #ccc',
             background: 'rgba(51, 51, 51, 1)',
-            left: 300,
-            right: 300,
+            left: "10%",
+            right: "10%",
             
           }
         }}
@@ -150,7 +150,8 @@ function Employee(props) {
         </select>
             
         </label>
-      <label>Reason:
+          <label>Reason:
+               <br/>
         <textarea
           type='text'
           name='reason'

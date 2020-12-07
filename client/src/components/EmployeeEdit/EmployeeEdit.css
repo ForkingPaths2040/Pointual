@@ -23,3 +23,24 @@
   position: relative;
   top: 97px;
 }
+#reason-edit {
+  font-family: Helvetica;
+  font-size: 14px;
+  width: 157%;
+  height: 59%;
+}
+
+@media screen and (max-width: 800px) {
+  .form {
+    flex-direction: column;
+  }
+  #reason-edit {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1064px) {
+  #points {
+    padding: 0 10%;
+  }
+}
