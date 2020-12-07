@@ -1,3 +1,3 @@
 class Employee < ApplicationRecord
-has_many :infractions
+has_many :infractions, dependent: :destroy
 end
