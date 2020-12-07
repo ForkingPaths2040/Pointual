@@ -25,6 +25,28 @@ require 'faker'
     img_URL: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
     )
 end
+Employee.create!(
+  first_name: @first_name,
+    last_name: Faker::Name.unique.last_name,
+    points: 0,
+    email: Faker::Internet.email(name: @first_name),
+    phone_number: "(111)-555-6789",
+    position: Faker::Job.position,
+    hire_date: Faker::Date.between(from: '2020-01-01', to: '2020-12-31'),
+    tenure: Faker::Number.between(from: 1, to: 90),
+    img_URL: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
+)
+Employee.create!(
+  first_name: @first_name,
+    last_name: Faker::Name.unique.last_name,
+    points: 0,
+    email: Faker::Internet.email(name: @first_name),
+    phone_number: "(111)-555-6789",
+    position: Faker::Job.position,
+    hire_date: Faker::Date.between(from: '2020-01-01', to: '2020-12-31'),
+    tenure: Faker::Number.between(from: 1, to: 90),
+    img_URL: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80"
+)
 puts "#{Employee.count} employees created"
 
 @user = Manager.create!(email: 'manager@email.com', password: '123456')
