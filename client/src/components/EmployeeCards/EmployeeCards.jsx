@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
 import './EmployeeCards.css'
 
 
 function EmployeeCards(props) {
-  const [points, setPoints] = useState(0);
+  // const [points, setPoints] = useState(0);
   
   // useEffect(() => {
   //   const handleSum = () => {
