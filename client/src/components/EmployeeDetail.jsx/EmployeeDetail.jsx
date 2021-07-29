@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './EmployeeDetail.css'
 import MailIcon from '@material-ui/icons/Mail';
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
@@ -8,8 +8,29 @@ import WorkIcon from '@material-ui/icons/Work';
 
 function EmployeeDetail(props) {
   const { employee, points} = props
-  console.log()
-
+  const [zone, setZone] = useState(null);
+  
+  
+  useEffect(() => {
+    const zoneStatus = () => {
+      if (points >= 36) {
+          setZone("Termination")
+          return zone
+        } else if (points >= 30) {
+          setZone("Final Warning")
+          return zone
+        } else if (points >= 24) {
+          setZone("Written Warning")
+          return zone
+        } else if (points >= 18) {
+          setZone("Verbal Warning")
+          return zone
+        } else {
+          return null
+        }
+    }
+    zoneStatus()
+  }, [points, zone])
 
 
   return (
@@ -26,7 +47,7 @@ function EmployeeDetail(props) {
         <p>last submitted</p>
         <p>last documented</p>
         <p>Warning Status</p>
-        <p>Zone Status</p>
+        <p>Zone: {zone}</p>
       </div>
       <hr className="line-break-1"/>
       <div className='employee-data-container'>
