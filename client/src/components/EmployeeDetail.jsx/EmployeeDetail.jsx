@@ -8,7 +8,12 @@ import WorkIcon from '@material-ui/icons/Work';
 
 function EmployeeDetail(props) {
   const { employee, points} = props
-  const [zone, setZone] = useState(null);
+  const [zone, setZone] = useState(false);
+  const [lastSub, setLastSub] = useState({
+    date: null,
+    id: null
+  });
+  
   
   
   useEffect(() => {
@@ -29,9 +34,20 @@ function EmployeeDetail(props) {
           return null
         }
     }
+    const lastSubmission = () => {
+      if (employee.infractions) {
+        let infractions = employee.infractions.map((item) => { return { date: item.date, id: item.id } })
+        console.log('infractions', infractions)
+        let sortedInfractions = infractions.sort((a, b) => new Date(b.date) - new Date(a.date))
+        console.log('sorted', sortedInfractions)
+        let lastInfraction = sortedInfractions[0]
+        setLastSub(prevState => ({ ...prevState, date: lastInfraction.date, id: lastInfraction.id }))
+        return lastSub
+      }
+    }
     zoneStatus()
+    lastSubmission()
   }, [points, zone])
-
 
   return (
     <div className="employee-detail-container">
@@ -44,10 +60,10 @@ function EmployeeDetail(props) {
       </div>
       <hr className="line-break-1"/>
       <div className='employee-stats-container'>
-        <p>last submitted</p>
+        <p>Recent Entry: #{lastSub.id}, {lastSub.date} </p>
         <p>last documented</p>
         <p>Warning Status</p>
-        <p>Zone: {zone}</p>
+        <p>{ zone  ? `Zone: ${zone}` : null}</p>
       </div>
       <hr className="line-break-1"/>
       <div className='employee-data-container'>
