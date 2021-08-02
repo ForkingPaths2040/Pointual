@@ -19,7 +19,7 @@ function App() {
     const handleVerify = async () => {
       const userData = await verifyUser();
       setCurrentUser(userData);
-      userData ? history.push("/employees") : history.push("/login");
+      userData ? history.push("/employees") : history.push("/");
     };
     handleVerify();
   }, [history]);
@@ -27,20 +27,20 @@ function App() {
   const handleLogin = async (loginData) => {
     const userData = await loginUser(loginData);
     setCurrentUser(userData);
-    userData ? history.push("/employees") : history.push("/login");
+    userData ? history.push("/employees") : history.push("/");
   };
 
   const handleLogout = () => {
     setCurrentUser(null);
     localStorage.removeItem("authToken");
     removeToken();
-    history.push("/login");
+    history.push("/");
   };
 
   return (
     <Navigation currentUser={currentUser} handleLogout={handleLogout}>
       <Switch>
-        <Route exact path="/login">
+        <Route exact path="/">
           <Login handleLogin={handleLogin} />
         </Route>
 
