@@ -1,11 +1,18 @@
 class InfractionsController < ApplicationController
   before_action :set_infraction, only: [:show, :update, :destroy]
 
-  # GET /infractions
+  # GET /employees/1
   def index
     @employee =Employee.find(params[:employee_id])
     @infractions = @employee.infractions
   
+    render json: @infractions
+  end
+
+  # GET /infractions
+  def allLogs
+    @infractions = Infraction.all
+
     render json: @infractions
   end
 
