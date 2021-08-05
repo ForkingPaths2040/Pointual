@@ -11,7 +11,7 @@ function Header(props) {
           <ul className='nav-items'>
             <Link to='/employees'><li>Employees</li></Link>
             <Link to='/employees'><li>Zones</li></Link>
-            <Link to='/employees'><li>Logs</li></Link>
+            <Link to='/logs'><li>Logs</li></Link>
             <Link to='/employees'><li>Status</li></Link>
             <li><button className='button-2' onClick={props.handleLogout}>Logout</button></li>
           </ul>

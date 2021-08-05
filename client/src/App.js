@@ -8,6 +8,7 @@ import { loginUser, removeToken, verifyUser } from "./services/auth";
 import Login from "./screens/Login/Login";
 import Employees from "./screens/Employees/Employees";
 import Employee from "./screens/Employee/Employee";
+import Logs from "./screens/Logs/Logs";
 import Navigation from "./layouts/Navigation/Navigation";
 
 function App() {
@@ -49,6 +50,9 @@ function App() {
         </Route>
         <Route path="/employees">
           <Employees currentUser={currentUser} />
+        </Route>
+        <Route path="/logs">
+          <Logs currentUser={currentUser} />
         </Route>
       </Switch>
     </Navigation>

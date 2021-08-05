@@ -9,14 +9,14 @@ export const getInfractions = async (id) => {
   }
 };
 
-// export const getAllInfractions = async () => {
-//   try {
-//     const response = await api.get(`/infractions`);
-//     return response.data.infractions;
-//   } catch (error) {
-//     throw error;
-//   }
-// };
+export const getAllInfractions = async () => {
+  try {
+    const response = await api.get(`/logs`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
 
 export const deleteInfraction = async (id, id2) => {
   try {
