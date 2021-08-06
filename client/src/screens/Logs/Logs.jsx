@@ -4,7 +4,6 @@ import { getAllInfractions } from '../../services/infractions';
 
 function Logs(props) {
   const [logs, setLogs] = useState([]);
-  const [sortedLogs, setSortedLogs] = useState();
   
   
   
@@ -12,14 +11,10 @@ function Logs(props) {
   useEffect(() => {
     const fetchLogs = async () => {
       const resp = await getAllInfractions();
-      setLogs(resp)
+      let sorted = resp.sort((a, b) => new Date(b.date) - new Date(a.date))
+      setLogs(sorted)
     }
-    // const sortedbyDate = () => {
-    //   let sorted = logs.sort((a, b) => new Date(b.date) - new Date(a.date))
-    //   setSortedLogs(sorted)
-    // }
     fetchLogs();
-    // sortedbyDate();
   }, [])
 
 
