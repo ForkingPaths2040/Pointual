@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './Logs.css'
 import { getAllInfractions } from '../../services/infractions';
+import LogEntry from '../../components/LogEntry/LogEntry';
 
 function Logs(props) {
   const [logs, setLogs] = useState([]);
@@ -21,13 +22,9 @@ function Logs(props) {
 
   return (
     <div>
-      {logs.map((obj, index) => {
-        return <div style={{ border: "solid 1px black" }} key={index}>
-          {obj.date}
-          {obj.id}
-          {obj.attendance}
-          {obj.points}
-          </div>
+      {logs.map((log, index) => {
+        return <LogEntry key={index} log={log}/>
+    
       })}
     </div>
   );
