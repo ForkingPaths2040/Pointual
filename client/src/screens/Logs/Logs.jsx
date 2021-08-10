@@ -21,7 +21,7 @@ function Logs(props) {
 
 
   return (
-    <div>
+    <div style={{width: '50%', borderRight: 'solid 1px #ccc', margin: '25px 0'}}>
       {logs.map((log, index) => {
         return <LogEntry key={index} log={log}/>
     

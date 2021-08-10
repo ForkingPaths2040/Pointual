@@ -2,6 +2,22 @@
   text-align: center;
 }
 
+/* Global Flex Classes */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.space-btw {
+  justify-content: space-between;
+}
+.align-rw-cntr {
+  align-items: center;
+}
 /* Global Font Classes */
 .extra-bold {
   font-family: "Abhaya Libre", serif;
@@ -127,8 +143,33 @@
   border: solid 1px rgb(128, 189, 247);
 }
 
+.button-7 {
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #1c8bf9;
+  border: 0;
+  width: 129px;
+  height: 25px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin: 0px;
+}
+.button-7:hover {
+  background-color: #fff;
+  color: #1c8bf9;
+  border: solid 1px #1c8bf9;
+}
+
 /* Global <hr/> */
 .line-break-1 {
   border: solid 1px lightgrey;
   width: 90%;
+}
+
+/* Global Margin Classes */
+.margin-0 {
+  margin: 0px;
+}
+.margin-cntr {
+  margin: 0 auto;
 }
