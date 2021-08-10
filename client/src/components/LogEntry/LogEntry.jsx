@@ -27,7 +27,7 @@ function LogEntry(props) {
       }
       return day
     },
-    date: () => new Intl.DateTimeFormat('en-US', { dateStyle: 'short' }).format(new Date(log.date))
+    date: () => new Intl.DateTimeFormat('en-US', { dateStyle: 'short' }).format(new Date(log.date.replace(/-/g, '\/').replace(/T.+/, '')))
   }
 
   return (
