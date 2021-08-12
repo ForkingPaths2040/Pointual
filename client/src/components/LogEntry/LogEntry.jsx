@@ -2,7 +2,7 @@ import React from 'react';
 import "./LogEntry.css"
 
 function LogEntry(props) {
-  const { log } = props
+  const {log} = props
   const createdAt = new Intl.DateTimeFormat('en-US', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(log.created_at))
   const date = {
     day: () => {
@@ -27,7 +27,7 @@ function LogEntry(props) {
       }
       return day
     },
-    date: () => new Intl.DateTimeFormat('en-US', { dateStyle: 'short' }).format(new Date(log.date.replace(/-/g, '\/').replace(/T.+/, '')))
+    date: () => new Intl.DateTimeFormat('en-US', { dateStyle: 'short' }).format(new Date(log.date.replace(/-/g, '/').replace(/T.+/, '')))
   }
 
   return (
