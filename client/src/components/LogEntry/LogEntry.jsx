@@ -39,7 +39,7 @@ function LogEntry(props) {
           <button className='button-7'>New Entry</button>
         </div>
       </div>
-      <div onClick={()=> handleSelect(log)} style={{borderRight:'1px solid #ccc', borderLeft:'1px solid #ccc'}} className='flex-column'>
+      <div onClick={()=> handleSelect(log)} style={{borderRight:'1px solid #ccc', borderLeft:'1px solid #ccc', cursor: 'pointer'}} className='flex-column'>
         <div style={{paddingRight:'10px'}}className='flex-row space-btw align-rw-cntr title-pairings'>
           <h4 style={{ margin: '10px', fontSize:'12px' }}>{log.employee_id}</h4>
           <p style={{ color: '#ccc' }}>Created { createdAt } CST</p>
