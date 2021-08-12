@@ -41,12 +41,14 @@ function Logs(props) {
   return (
     <div style={{ width: '50%', borderRight: 'solid 1px #ccc', margin: '25px 0' }}>
       {range.map((value, index) => {
-        console.log(`Value: ${value}, Date: ${dates[index].date}`)
-        if (value === dates[index].date) {
+        let dailies = dates.filter((element => element.date === value))
+        if (dailies) {
           return (
-            <div>
-              <LogHeadings date={value} />
-              <LogEntry logs={dates[index]} />
+              <div>
+                <LogHeadings date={value} />
+                {dailies.map((day, index) => {
+                  return <LogEntry log={day} key={index} />
+                })}
             </div>
           )
         } else {
@@ -57,10 +59,7 @@ function Logs(props) {
             </div>
           )
         }
-      })}
-      {/* {logs.map((log, index) => {
-        return <LogEntry key={index} range={range} log={log} />
-      })} */}
+        })}
     </div>
   );
 }
