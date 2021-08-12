@@ -3,10 +3,13 @@ import './Logs.css'
 import { getAllInfractions } from '../../services/infractions';
 import LogEntry from '../../components/LogEntry/LogEntry';
 import LogHeadings from '../../components/LogHeadings/LogHeadings';
+import SelectedEntry from '../../components/SelectedEntry/SelectedEntry';
 
 function Logs(props) {
   const [logs, setLogs] = useState([]);
   const [range, setRange] = useState([]);
+  const [selectedEntry, setSelectedEntry] = useState({});
+  
   
   useEffect(() => {
     const fetchLogs = async () => {
@@ -34,16 +37,25 @@ function Logs(props) {
     dateRange()
   }, [])
 
-  let dates = logs.map((log) => {
-    return {...log, date: new Intl.DateTimeFormat('en-US', { dateStyle: 'short' }).format(new Date(log.date))}
-  })
+  const handleSelect = (log) => {
+    return setSelectedEntry({...selectedEntry, ...log})
+   }
+
+  // let dates = logs.map((log) => {
+  //   return {...log, date: new Intl.DateTimeFormat('en-US', { dateStyle: 'short' }).format(new Date(log.date))}
+  // })
   // let dailies = dates.filter((element => element.date === value))
 
   return (
+    <div className='flex-row'>
     <div style={{ width: '50%', borderRight: 'solid 1px #ccc', margin: '25px 0' }}>
       {logs.map((value, index) => {
-        return <LogEntry log={value} key={index} />
+        return <LogEntry log={value} key={index} handleSelect={() => handleSelect(value)}/>
       })}
+    </div>
+      <div style={{ width: '50%', margin: '25px 0' }}>
+        {selectedEntry.attendance ? <SelectedEntry entry={selectedEntry} />: <p style={{width:'85%', fontStyle:'italic', margin: '1em auto'}}>No entries selected.</p> }
+    </div>
     </div>
   );
 }

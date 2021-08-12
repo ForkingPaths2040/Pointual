@@ -2,7 +2,7 @@ import React from 'react';
 import "./LogEntry.css"
 
 function LogEntry(props) {
-  const {log} = props
+  const { log, handleSelect} = props
   const createdAt = new Intl.DateTimeFormat('en-US', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(log.created_at))
   const date = {
     day: () => {
@@ -29,6 +29,7 @@ function LogEntry(props) {
     },
     date: () => new Intl.DateTimeFormat('en-US', { dateStyle: 'short' }).format(new Date(log.date.replace(/-/g, '/').replace(/T.+/, '')))
   }
+  
 
   return (
     <div style={{borderBottom: "solid 1px #ccc", width: '85%', margin: '0 auto'}}>
@@ -38,7 +39,7 @@ function LogEntry(props) {
           <button className='button-7'>New Entry</button>
         </div>
       </div>
-      <div style={{borderRight:'1px solid #ccc', borderLeft:'1px solid #ccc'}} className='flex-column'>
+      <div onClick={()=> handleSelect(log)} style={{borderRight:'1px solid #ccc', borderLeft:'1px solid #ccc'}} className='flex-column'>
         <div style={{paddingRight:'10px'}}className='flex-row space-btw align-rw-cntr title-pairings'>
           <h4 style={{ margin: '10px', fontSize:'12px' }}>{log.employee_id}</h4>
           <p style={{ color: '#ccc' }}>Created { createdAt } CST</p>
