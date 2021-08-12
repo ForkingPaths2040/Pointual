@@ -37,29 +37,13 @@ function Logs(props) {
   let dates = logs.map((log) => {
     return {...log, date: new Intl.DateTimeFormat('en-US', { dateStyle: 'short' }).format(new Date(log.date))}
   })
+  // let dailies = dates.filter((element => element.date === value))
 
   return (
     <div style={{ width: '50%', borderRight: 'solid 1px #ccc', margin: '25px 0' }}>
-      {range.map((value, index) => {
-        let dailies = dates.filter((element => element.date === value))
-        if (dailies) {
-          return (
-              <div>
-                <LogHeadings date={value} />
-                {dailies.map((day, index) => {
-                  return <LogEntry log={day} key={index} />
-                })}
-            </div>
-          )
-        } else {
-          return (
-            <div>
-              <LogHeadings date={value} />
-              <p>No entries for this date.</p>
-            </div>
-          )
-        }
-        })}
+      {logs.map((value, index) => {
+        return <LogEntry log={value} key={index} />
+      })}
     </div>
   );
 }

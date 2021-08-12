@@ -2,11 +2,11 @@ import React from 'react';
 import LogEntry from '../LogEntry/LogEntry';
 
 function LogHeadings(props) {
-  const { date, logs } = props
+  const { title } = props
   const heading = {
     day: () => {
       let day;
-      switch (new Date(date).getDay()) {
+      switch (new Date(title).getDay()) {
         case 0: day='MON'
           break;
         case 1: day='TUES'
@@ -26,7 +26,7 @@ function LogHeadings(props) {
       }
       return day
     },
-    date: () => new Intl.DateTimeFormat('en-US', { dateStyle: 'short' }).format(new Date(date))
+    date: () => new Intl.DateTimeFormat('en-US', { dateStyle: 'short' }).format(new Date(title))
   }
 
 
