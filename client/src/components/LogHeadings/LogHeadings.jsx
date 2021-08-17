@@ -42,9 +42,7 @@ function LogHeadings(props) {
             return <LogEntry log={log} key={index} />
           })
           :
-          // <div style={{ borderRight: '1px solid #ccc', borderLeft: '1px solid #ccc', cursor: 'pointer', width:'85%', margin:'0 auto' }} className='flex-column'>
-          <p style={{ paddingLeft: '10px', fontSize: '12px', fontStyle: 'italic' }}>No entry</p>
-          // </div>
+          <p style={{ padding: '10px', fontSize: '12px', fontStyle: 'italic', margin: 0 }}>No entry</p>
         }
       </div>    
     </div>

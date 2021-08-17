@@ -1,19 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import './Logs.css'
 import { getAllInfractions } from '../../services/infractions';
-import LogEntry from '../../components/LogEntry/LogEntry';
 import LogHeadings from '../../components/LogHeadings/LogHeadings';
 import SelectedEntry from '../../components/SelectedEntry/SelectedEntry';
 import Modal from 'react-modal'
 import "react-datepicker/dist/react-datepicker.css"
 import { postInfraction} from '../../services/infractions'
 import {getEmployees} from '../../services/employees'
-// import Employee from '../Employee/Employee';
 
 function Logs(props) {
   const [logs, setLogs] = useState([]);
   const [employees, setEmployees] = useState([]);
-  const [dailies, setDailies] = useState([]);
   
   const [range, setRange] = useState([]);
   const [selectedEntry, setSelectedEntry] = useState({});
@@ -61,32 +58,6 @@ function Logs(props) {
     dateRange()
   }, [])
 
-  // useEffect(() => {
-  //   // takes the previous state of range that descends from today's date and compares to each infraction date to then create an array of key-value pairs of matching conditional 
-  //   const matchRangeAndLogs = () => {
-  //     let matched = []
-  //     if (range.length > 0 && logs.length > 0) {
-  //        range.forEach((date, i) => {
-  //          let obj = {};
-  //          obj[date] = null
-  //          matched.push(obj)
-  //          return logs.forEach((log, i) => {
-  //           //  reformat to compare properly
-  //           log.date = new Intl.DateTimeFormat('en-US', { dateStyle: 'short' }).format(new Date(log.date))
-  //            if (log.date === date) {
-  //             //  in order to store $date as a variable must use bracket notation and declaring the value to be an array holding an object
-  //              obj[date] = [log]
-  //              if (obj[date].length > 0) {
-  //                return obj[date].push(log)
-  //              }
-  //           }
-  //         })
-  //       })
-  //       return setDailies(matched)
-  //     }
-  //   }
-  //   matchRangeAndLogs()
-  // }, [])
 
   function toggleModal() {
     setIsOpen(!isOpen);
@@ -122,17 +93,8 @@ function Logs(props) {
   return (
     <div className='flex-row'>
     <div style={{ width: '50%', borderRight: 'solid 1px #ccc', margin: '25px 0' }}>
-      {/* {logs.map((value, index) => {
-        return <LogEntry log={value} key={index} handleSelect={() => handleSelect(value)} modal={toggleModal}/>
-      })} */}
         {range.map((date, i) => {
           return <LogHeadings title={date} key={i} logs={logs} />
-          // return logs.forEach((log, index) => {
-          //   log.date = new Intl.DateTimeFormat('en-US', { dateStyle: 'short' }).format(new Date(log.date))
-          //   if (log.date === date) {
-          //     return <LogEntry log={log} key={index} handleSelect={() => handleSelect(value)} modal={toggleModal} />
-          //   }
-          // })
         })}
     </div>
       <div style={{ width: '50%', margin: '25px 0' }}>
