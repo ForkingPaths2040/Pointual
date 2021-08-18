@@ -1,8 +1,11 @@
 import React from 'react';
 
 function SelectedEntry(props) {
-  const { entry } = props
+  const { entry, employees } = props
   const createdAt = new Intl.DateTimeFormat('en-US', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(entry.created_at))
+
+  const record = employees.find((employee => employee.id === entry.employee_id))
+
   return (
     <div style={{border:'solid 1px #ccc', width: '85%', margin:'0 auto'}}>
       <div style={{background:'#ccc', height:'25px'}}>
@@ -11,7 +14,7 @@ function SelectedEntry(props) {
         </div>
         </div>
       <div style={{paddingRight:'10px'}}className='flex-row space-btw align-rw-cntr title-pairings'>
-          <h4 style={{ margin: '10px', fontSize:'12px' }}>{entry.employee_id}</h4>
+          <h4 style={{ margin: '10px', fontSize:'12px' }}>{`${record?.first_name} ${record?.last_name}`}</h4>
           <p style={{ color: '#ccc' }}>Created { createdAt } CST</p>
         </div>
         <div className="title-pairings">

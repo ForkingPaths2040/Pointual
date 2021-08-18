@@ -97,13 +97,13 @@ function Logs(props) {
 
   return (
     <div className='flex-row'>
-    <div style={{ width: '50%', borderRight: 'solid 1px #ccc', margin: '25px 0' }}>
+    <div style={{ width: '50%', borderRight: 'solid 1px #ccc', margin: '25px 0', height: '75vh', overflow:'overlay' }}>
         {range.map((date, i) => {
-          return <LogHeadings title={date} key={i} logs={logs} handleSelect={handleSelect} />
+          return <LogHeadings title={date} key={i} logs={logs} handleSelect={handleSelect} employees={employees}/>
         })}
     </div>
       <div style={{ width: '50%', margin: '25px 0' }}>
-        {selectedEntry.attendance ? <SelectedEntry entry={selectedEntry} />: <p style={{width:'85%', fontStyle:'italic', margin: '1em auto'}}>No entries selected.</p> }
+        {selectedEntry.attendance ? <SelectedEntry entry={selectedEntry} employees={employees}/>: <p style={{width:'85%', fontStyle:'italic', margin: '1em auto'}}>No entries selected.</p> }
       </div>
       <Modal
         isOpen={isOpen}
