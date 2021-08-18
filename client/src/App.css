@@ -173,3 +173,8 @@
 .margin-cntr {
   margin: 0 auto;
 }
+
+/* Global Links and <a> */
+a {
+  color: rgb(34, 34, 34);
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import "./LogEntry.css"
 
 function LogEntry(props) {
@@ -14,8 +15,10 @@ function LogEntry(props) {
   return (
     <div style={{borderBottom: "solid 1px #ccc", cursor:'pointer'}}>
         <div onClick={() => handleSelect(log)} className='flex-column'>
-          <div style={{ paddingRight: '10px' }} className='flex-row space-btw align-rw-cntr title-pairings'>
+        <div style={{ paddingRight: '10px' }} className='flex-row space-btw align-rw-cntr title-pairings'>
+          <Link to={`/employees/${record?.id}`}>
             <h4 style={{ margin: '10px', fontSize: '12px' }}>{`${record?.first_name} ${record?.last_name}`}</h4>
+          </Link>
             <p style={{ color: '#ccc' }}>Created {createdAt} CST</p>
           </div>
           <div className="title-pairings">

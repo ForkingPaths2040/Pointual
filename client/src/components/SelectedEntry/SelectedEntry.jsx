@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function SelectedEntry(props) {
   const { entry, employees } = props
@@ -13,8 +14,10 @@ function SelectedEntry(props) {
           <button className='button-7'>Reply</button>
         </div>
         </div>
-      <div style={{paddingRight:'10px'}}className='flex-row space-btw align-rw-cntr title-pairings'>
-          <h4 style={{ margin: '10px', fontSize:'12px' }}>{`${record?.first_name} ${record?.last_name}`}</h4>
+      <div style={{ paddingRight: '10px' }} className='flex-row space-btw align-rw-cntr title-pairings'>
+        <Link to={`/employees/${record.id}`}>
+          <h4 style={{ margin: '10px', fontSize: '12px' }}>{`${record?.first_name} ${record?.last_name}`}</h4>
+        </Link>
           <p style={{ color: '#ccc' }}>Created { createdAt } CST</p>
         </div>
         <div className="title-pairings">
