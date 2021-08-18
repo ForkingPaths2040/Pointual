@@ -86,15 +86,20 @@ function Logs(props) {
     }))
   }
 
-  const handleSelect = (log) => {
-    return setSelectedEntry({...selectedEntry, ...log})
-   }
+  const handleSelect = (log = false) => {
+    if (log) {
+      return setSelectedEntry({...selectedEntry, ...log})
+    } else {
+      return setSelectedEntry({})
+    }
+    }
+   
 
   return (
     <div className='flex-row'>
     <div style={{ width: '50%', borderRight: 'solid 1px #ccc', margin: '25px 0' }}>
         {range.map((date, i) => {
-          return <LogHeadings title={date} key={i} logs={logs} />
+          return <LogHeadings title={date} key={i} logs={logs} handleSelect={handleSelect} />
         })}
     </div>
       <div style={{ width: '50%', margin: '25px 0' }}>

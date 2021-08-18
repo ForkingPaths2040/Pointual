@@ -35,7 +35,7 @@ function LogEntry(props) {
   
 
   return (
-    <div style={{borderBottom: "solid 1px #ccc",}}>
+    <div style={{borderBottom: "solid 1px #ccc", cursor:'pointer'}}>
         <div onClick={() => handleSelect(log)} className='flex-column'>
           <div style={{ paddingRight: '10px' }} className='flex-row space-btw align-rw-cntr title-pairings'>
             <h4 style={{ margin: '10px', fontSize: '12px' }}>{log.employee_id}</h4>
