@@ -2,5 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 5% 4%;
+  margin: 0 5% 4%;
+}
+
+.active-btn {
+  background-color: #1c8bf9;
+  color: white;
 }
