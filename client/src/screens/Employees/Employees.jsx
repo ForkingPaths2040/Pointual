@@ -71,7 +71,7 @@ function Employees(props) {
       {
         props.currentUser ?
           <div className='flex-column'>
-            <div className='flex-row' style={{margin:'55px 127px 16px'}}>
+            <div className='flex-row' style={{margin:'55px 128px 16px'}}>
               <button onClick={() => {
                 handleToggle('first');
                 setEmployees(sortFirstName)
