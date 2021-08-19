@@ -41,7 +41,7 @@ function EmployeeDetail(props) {
         let sortedInfractions = infractions.sort((a, b) => new Date(b.date) - new Date(a.date))
         console.log('sorted', sortedInfractions)
         let lastInfraction = sortedInfractions[0]
-        setLastSub(prevState => ({ ...prevState, date: new Intl.DateTimeFormat('en-US', { dateStyle: 'short' }).format(new Date(lastInfraction.date)), id: lastInfraction.id }))
+        setLastSub(prevState => ({ ...prevState, date: new Intl.DateTimeFormat('en-US', { dateStyle: 'short' }).format(new Date(lastInfraction.date.replace(/-/g, '/').replace(/T.+/, ''))), id: lastInfraction.id }))
         return lastSub
       }
     }
