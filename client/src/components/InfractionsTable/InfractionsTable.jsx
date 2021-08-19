@@ -54,7 +54,7 @@ function InfractionsTable(props) {
                 {row.id}
               </TableCell>
               <TableCell align="center" >{row.attendance}</TableCell>
-              <TableCell align="center">{row.date}</TableCell>
+              <TableCell align="center">{new Intl.DateTimeFormat('en-US', { dateStyle: 'short' }).format(new Date(row.date.replace(/-/g, '\/').replace(/T.+/, '')))}</TableCell>
               <TableCell align="center">{row.points}</TableCell>
               <TableCell align="center">{row.reason}</TableCell>
               <TableCell align="center">
